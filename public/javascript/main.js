@@ -61,4 +61,10 @@ $(document).ready(function() {
     $(".homepage-banner").toggleClass("offMargin");
     console.log(this);
   });
+  $(".sidebarBtn").on("touchstart", function() {
+    $(".sidebar").toggleClass("active");
+    $(".sidebarBtn").toggleClass("toggle");
+    $(".homepage-banner").toggleClass("offMargin");
+    console.log(this);
+  });
 });
