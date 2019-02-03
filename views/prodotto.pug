@@ -11,11 +11,12 @@ block body
    .homepage(style='background:black;')
 
     -// Homepage Banner Section
-    section.homepage-banner
-      .container
-        h2.testo-dorato.pr-5.mt-5.text-center.text-extra-bold Prodotti
+    section.homepage-banner-2
+       .container.mt-5.pt-3
+          h2.testo-dorato.pr-5.mt-5.text-center.text-extra-bold Prodotti
 
     div(style='position:relative')
+
         .arrow-left
           i.fas.fa-arrow-circle-left
            #testoPrevSlide
@@ -28,14 +29,14 @@ block body
                 .container-fluid.mt-5(style='background:black;color:#fff;')
                   .contenitore-slide.box-background.pt-5
 
-                    h5.text-upper.testo-dorato.text-center.text-bold.pr-5 #{categoria}
+                    h5.text-upper.testo-dorato.text-center #{categoria}
 
 
-                    h2.text-upper.testo-dorato.text-center.text-extra-bold.pr-5
+                    h2.text-upper.testo-dorato.text-center.text-extra-bold
                       !=RichText.asText(prod.data.title)
-                    h4.text-upper.testo-dorato.text-center.text-bold.pr-5 caffè in grani per macchina espresso
-
-                    img.img-fluid(style=';margin:10px auto;padding-bottom:20px;display:block;position:relative;left:120px;')(src=prod.data.image.url)
+                    h4.text-upper.testo-dorato.text-center.px-5 caffè in grani per macchina espresso
+                    div.container-fluid
+                     img.img-fluid.centered(src=prod.data.image.url)
                   .container()
                     p.px-5.py-5.descri-testo.text-just
                       !=RichText.asText(prod.data.descrizione_prodotto)

@@ -8,7 +8,7 @@
 
 .banner-section-site {
 
-  ;
+
   width: 100%;
   margin-top: -60px;
   background: #100605;
@@ -194,17 +194,26 @@ body {
 
 }
 
+.table td {
+  color: #fff;
+}
+
 h5.text-upper.testo-dorato-su-bianco {
   font-size: 3em;
 }
 
+.centered {
+  margin: 0 auto;
+  display: block;
+
+}
+
 .testo-dorato {
   color: rgb(236, 161, 39);
-  /*if no support for background-clip*/
-  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  background: linear-gradient(to right, #BF953F, #f5d916, #B38728, #ead600, #AA771C);
   background: -o-linear-gradient(transparent, transparent);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent
 }
 
 h5.testo-dorato-su-bianco {
@@ -458,8 +467,26 @@ span.icon:hover {
   margin-left: 40px;
 }
 
+.no-border {
+  border: 0;
+}
 
 @media (max-width: 767px) {
+  h5.text-upper.testo-dorato-su-bianco {
+    text-align: center;
+  }
+
+
+
+  .descrizione-prodotto {
+    padding: 20px;
+  }
+
+  a.ban {
+    text-align: right;
+    margin-right: 20px;
+  }
+
   .site-header {
     padding-left: 20px;
     padding-right: 20px;
@@ -476,6 +503,17 @@ span.icon:hover {
   background-position: center;
   background-size: cover;
   height: 80vh;
+  transition: .3s;
+
+
+}
+
+.homepage-banner-2 {
+  margin: -70 0 40px;
+  padding: 10em 0 6em;
+  background-position: center;
+  background-size: cover;
+  height: 20vh;
   transition: .3s;
 
 
@@ -647,6 +685,11 @@ p {
   h1 {
     font-size: 32px;
     line-height: 40px;
+  }
+
+  .arrow-left,
+  .arrow-right {
+    font-size: 1.2em;
   }
 
   h2 {
@@ -1393,7 +1436,7 @@ footer a {
 
 .center-thumbs .lslide {
   margin: 0 auto;
-  border: 0;
+
   font-size: 20px;
 
 }

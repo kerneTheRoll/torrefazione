@@ -14,16 +14,16 @@ $(document).ready(function() {
   var slide = $("#slideProdotti").lightSlider({
     item: 2,
     slideMove: 1,
-    slideMargin: 0,
-    slideMargin: 10,
-    enableDrag: false,
+
+    enableDrag: true,
     controls: true,
     pager: false,
-    controls: false,
+
     addClass: "center-thumbs",
     responsive: [
       {
-        breakpoint: 420,
+        breakpoint: 767,
+
         settings: {
           item: 1,
           slideMove: 1
