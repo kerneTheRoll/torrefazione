@@ -65,6 +65,5 @@ $(document).ready(function() {
     $(".sidebar").toggleClass("active");
     $(".sidebarBtn").toggleClass("toggle");
     $(".homepage-banner").toggleClass("offMargin");
-    console.log(this);
   });
 });
