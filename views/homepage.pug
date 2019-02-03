@@ -1,0 +1,123 @@
+extends ./layout.pug
+
+block variables
+  - var nav_class = 'dark'
+  - var activeDoc = home
+  - var desktop  = home.data.backgroundImage.url
+  - var tablet  = home.data.backgroundImage.tablet.url
+  - var mobile  = home.data.backgroundImage.mobile.url
+  -var collaborazione =home.data.immagine_collaborazione.url
+
+block body
+  style(type="text/css").
+       .homepage-banner{
+            background-image:url(#{desktop});
+
+
+            background-repeat:no-repeat;
+            background-size:content;
+         }
+
+        .immagine-collaborazione{
+          background-repeat:no-repeat;
+          background-size:cover;
+          display:flex;
+          justify-content:center;
+          flex-direction:column;
+          text-align:center;
+          background-image:url(#{collaborazione});
+          height:400px;
+
+
+        }
+
+
+       @media only screen and (max-width:768px){
+          .homepage-banner{
+            background-image:url(#{tablet});
+            height:50vh;
+
+
+         }
+       }
+           @media only screen and (max-width:400px){
+          .homepage-banner{
+            background-image:url(#{mobile});
+            height:500px;
+
+
+         }
+         .banne{
+           color:red;
+           font-size:40px;
+         }
+      }
+
+  .homepage
+
+    -// Homepage Banner Section
+    section.homepage-banner
+
+      .banner-content.grid-container
+        h2.banner-title
+          != RichText.asText(home.data.motto)
+    section.banner-section-site
+      h2.titolo-sezioni.font-ultra-bold
+        != RichText.asText(home.data.titolo_sezioni)
+      .container.black-container
+        .row
+          .col-md-4.card
+            h2.card-title.text-center.text-dorato.font-ultra-bold
+              != RichText.asText(home.data.titolo_storia)
+
+
+            p
+              != RichText.asText(home.data.descrizione_storia)
+            .card-footer
+               span.float-right
+                i.far.fa-arrow-alt-circle-right
+
+
+          .col-md-4.card
+            h2.card-title.text-center.text-center.text-dorato.font-ultra-bold
+              != RichText.asText(home.data.titolo_storia)
+            p
+              != RichText.asText(home.data.descrizione_storia)
+            .card-footer
+               span.float-right
+                i.far.fa-arrow-alt-circle-right
+          .col-md-4.card
+            h2.card-title.text-center.text-center.text-dorato.font-ultra-bold
+              != RichText.asText(home.data.titolo_storia)
+            p
+              != RichText.asText(home.data.descrizione_storia)
+            .card-footer
+               span.float-right.icon
+                i.far.fa-arrow-alt-circle-right
+      .container-fluid.mb-5.pb-2
+         h2.text-center.testo-dorato.text-upper.mt-3.font-ultra-bold Scopri i nostri caffè
+         .row.mt-5
+            #slideProdotti
+                each prod in prodotto
+                  .col-md-6.m-0.p-0.container-background
+                      .row
+                        .col-md-6.box.d-flex.flex-column.justify-content-center.align-items-center
+                            img.img-fluid(src=prod.data.image.url, alt="")
+                        .col-md-6.d-flex.flex-column.justify-content-center
+                            h5.text-upper.testo-dorato-su-bianco.titolo-caffe
+                             != RichText.asText(prod.data.title)
+                            p.text-black
+                              != RichText.asText(prod.data.descrizione_prodotto)
+                            a.ban(href=('/'+prod.lang+"/prodotto/"+prod.uid))
+                              != RichText.asText(prod.data.scopri)
+
+         .container-fluid.mt-5.mb-5
+              .container.immagine-collaborazione.mb-5
+                h2.testo-dorato.text-upper.text-bold.titolo-collaborazione
+                  !=RichText.asText(home.data.titolo_collaborazione)
+                p.text-bianco.descrizione-collaborazione.text-upper
+                  !=RichText.asText(home.data.descrizione_collaborazione)
+
+
+
+

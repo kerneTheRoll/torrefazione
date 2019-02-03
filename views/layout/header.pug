@@ -1,0 +1,38 @@
+header#header
+  - var homeUrl = `/${I18N.current}`;
+  .sidebar
+    ul
+      li
+        a(href="/" class='w') Home
+      li
+        a(href="#") Azienda
+      li.dropdow
+        a(href="#") Prodotti
+
+        ul
+          li
+            a(href="#") Macinati
+      li
+        a(href="#") Busnees
+      li
+        a(href="#") Contatti
+    button.sidebarBtn(type='button')
+      span
+  //
+    .logo
+      img(src=menu.data.logo_brand.url width='100px')
+
+
+  //
+    nav
+      ul
+        if menu
+          each linkItem in menu.data.menuLinks
+            li
+              a(href=Link.url(linkItem.link, ctx.linkResolver))
+                != linkItem.label
+
+          li.lang
+            include ./language-selector
+  .logo-container
+         img(src=menu.data.logo_brand.url width='100px')
