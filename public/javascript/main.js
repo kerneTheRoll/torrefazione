@@ -66,4 +66,12 @@ $(document).ready(function() {
     $(".sidebarBtn").toggleClass("toggle");
     $(".homepage-banner").toggleClass("offMargin");
   });
+  $(".chiudi").click(function() {
+    $(".sidebar").toggleClass("active");
+    $(".homepage-banner").toggleClass("offMargin");
+    $(".sidebarBtn").toggleClass("toggle");
+  });
+  $(".chiudi").on("tochstart", function() {
+    $(".sidebar").toggleClass("active");
+  });
 });

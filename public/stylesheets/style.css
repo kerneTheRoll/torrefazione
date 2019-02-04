@@ -1509,6 +1509,18 @@ footer a {
   height: 550px;
 }
 
+.align-right {
+  text-align: right;
+}
+
+.chiudi {
+  font-size: 3em;
+
+  cursor: pointer;
+  color: #fff;
+  display: none;
+}
+
 @media screen and (max-width:420px) {
   .homepage-banner .banner-content .banner-title {
     font-size: 30px;
@@ -1519,6 +1531,19 @@ footer a {
     right: 50px;
     margin-top: 80px;
 
+  }
+
+  .active {
+
+    right: 0px;
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+  }
+
+  .chiudi {
+    display: inline-block;
+    font-weight: 100;
   }
 
   .titolo-servizi {
