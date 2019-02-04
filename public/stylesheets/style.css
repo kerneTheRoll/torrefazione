@@ -202,6 +202,7 @@ h5.text-upper.testo-dorato-su-bianco {
   font-size: 3em;
 }
 
+
 .centered {
   margin: 0 auto;
   display: block;
@@ -478,6 +479,7 @@ span.icon:hover {
 
 
 
+
   .descrizione-prodotto {
     padding: 20px;
   }
@@ -529,6 +531,44 @@ span.icon:hover {
   z-index: 30000;
   cursor: pointer;
 
+}
+
+.arancone-testo {
+  color: #886833;
+
+}
+
+.servizi-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+
+
+
+
+}
+
+.blurred {
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+  z-index: 0;
+}
+
+.titoloCover {
+  z-index: 99999;
+  font-size: 60px;
+  position: absolute;
+}
+
+.testo-sottile {
+  font-weight: 100;
 }
 
 .arrow-left {
@@ -1338,6 +1378,10 @@ footer a {
     padding: 0 30px;
   }
 
+  div.row.servizi-container {
+    height: 950px;
+  }
+
   .text-section h1 {
     font-size: 40px;
     line-height: 50px;
@@ -1441,6 +1485,30 @@ footer a {
 
 }
 
+.titolo-servizi {
+  font-size: 3.4em;
+  padding-top: 20px;
+}
+
+.sottoTitolo-servizi {
+  font-size: 2.9em;
+  padding-top: 20px;
+  font-weight: 100;
+  padding-bottom: 10px;
+
+
+}
+
+.motto-servizi {
+  font-size: 1.7em;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+.servizi-container {
+  height: 550px;
+}
+
 @media screen and (max-width:420px) {
   .homepage-banner .banner-content .banner-title {
     font-size: 30px;
@@ -1450,6 +1518,23 @@ footer a {
     position: relative;
     right: 50px;
     margin-top: 80px;
+
+  }
+
+  .titolo-servizi {
+    font-size: 1.4em;
+
+  }
+
+  .servizi-container {
+    height: 650px;
+  }
+
+  .sottoTitolo-servizi {
+    font-size: 1.4em;
+
+
+
 
   }
 

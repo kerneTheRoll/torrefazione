@@ -99,7 +99,17 @@ app.get(I18NUrl("/"), (req, res, next) => {
       next(`error when retriving homepage ${error.message}`);
     });
 });
-
+app.get(I18NUrl("/servizi"), (req, res, next) => {
+  req.prismic.api
+    .getSingle("servizi", I18NConfig(req))
+    .then(servizio => {
+      console.log(servizio);
+      res.render("Servizi", { servizio: servizio });
+    })
+    .catch(error => {
+      next(`error when retriving homepage ${error.message}`);
+    });
+});
 // Route for pages
 app.get(I18NUrl("/page/:uid"), (req, res, next) => {
   const uid = req.params.uid;

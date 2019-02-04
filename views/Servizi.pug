@@ -1,0 +1,41 @@
+
+extends ./layout.pug
+
+block variables
+  - var nav_class = 'dark'
+
+
+block body
+
+  -// Content Section
+
+   .homepage(style='background:black;')
+
+    -// Homepage Banner Section
+    section.homepage-banner(style='background-image:url('+servizio.data.coverservizi.url+')')
+       .container.mt-5.pt-3
+          h1.testo-dorato.mt-5.text-center.text-extra-bold.titolo-servizi
+            != RichText.asText(servizio.data.titolo_servizi)
+          h4.testo-dorato.text-center.sottoTitolo-servizi
+            != RichText.asText(servizio.data.sottotitolo)
+
+    .container
+        h2.text-center.motto-servizi.arancone-testo.testo-sottile
+          !=RichText.asText(servizio.data.motto)
+
+    .container-fluid
+      .row.servizi-container
+
+          .col-md-4.d-flex.flex-column.justify-content-center.align-items-center
+            div.servizi-image.blurred(style='background-image:url('+servizio.data.immaginebar.url+');')
+            h2.testo-dorato.titoloCover
+                !=RichText.asText(servizio.data.titolo_bar)
+          .col-md-4.d-flex.flex-column.justify-content-center.align-items-center
+            div.servizi-image(style='background-image:url('+servizio.data.immagineristorante.url+');')
+            h2.testo-dorato.titoloCover
+                !=RichText.asText(servizio.data.titoloristorante)
+          .col-md-4.d-flex.flex-column.justify-content-center.align-items-center
+            div.servizi-image.blurred(style='background-image:url('+servizio.data.immagineufficio.url+');')
+            h2.testo-dorato.titoloCover
+                !=RichText.asText(servizio.data.titoloufficio)
+
