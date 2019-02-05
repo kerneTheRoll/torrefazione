@@ -9,7 +9,7 @@
 .banner-section-site {
 
 
-
+  width: 100%;
   margin-top: -60px;
   background: #100605;
 }
@@ -1401,7 +1401,7 @@ footer a {
   .homepage-banner .banner-content .banner-title {
     font-size: 3em;
     line-height: 40px;
-    width: 100%;
+
     text-align: left;
     position: relative;
     right: 50px;
@@ -1410,7 +1410,7 @@ footer a {
   }
 
   .homepage-banner .banner-content {
-    width: 100%;
+
     margin-top: 50px;
   }
 }
@@ -1525,7 +1525,7 @@ footer a {
   .homepage-banner .banner-content .banner-title {
     font-size: 30px;
     line-height: 40px;
-    width: 100%;
+
     text-align: left;
     position: relative;
     right: 50px;
@@ -1567,9 +1567,6 @@ footer a {
     font-size: 16px;
   }
 
-  .homepage-banner .banner-content {
-    width: 100%;
-  }
 
 
 
