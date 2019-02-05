@@ -285,7 +285,8 @@ h5.testo-dorato-su-bianco {
   font-weight: 400;
   color: #fff;
   font-size: 1em;
-  text-align: justify;
+
+
 }
 
 #header {
@@ -1533,6 +1534,19 @@ footer a {
 
   }
 
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .descri-testo {
+    text-align: left;
+  }
+
+
   .sidebar ul {
     padding: 0;
 
@@ -1574,6 +1588,9 @@ footer a {
   .chiudi {
     display: inline-block;
     font-weight: 100;
+    position: absolute;
+    top: 0;
+    right: 10px;
   }
 
   .titolo-servizi {
@@ -1602,7 +1619,26 @@ footer a {
 
   .titolo-sezioni {
     font-size: 1.5em;
+    padding: 10px;
 
+  }
+
+  .logo-container img {
+    width: 80px;
+    margin-left: 50px;
+  }
+
+  .container-background {
+    border: 0;
+  }
+
+  .ban {
+    margin-bottom: 5px;
+    padding-bottom: 10px;
+  }
+
+  .descri-testo {
+    padding: 0;
   }
 }
 

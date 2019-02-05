@@ -1,24 +1,26 @@
 header#header
   - var homeUrl = `/${I18N.current}`;
   .sidebar
-    div.container-fluid
-      span.float-right.chiudi X
-    ul
-      li
-        a(href="/" class='w') Home
-      li
-        a(href="#") Azienda
-      li.dropdow
-        a(href="#") Prodotti
+      .container-fluid
+        span.float-right.chiudi X
 
 
-      li
-        a(href="/servizi") Busnees
-      li
-        a(href="#") Contatti
+      ul
+        li
+          a(href="/" class='w') Home
+        li
+          a(href="#") Azienda
+        li.dropdow
+          a(href="#") Prodotti
 
-    button.sidebarBtn(type='button')
-      span
+
+        li
+          a(href="/servizi") Busnees
+        li
+          a(href="#") Contatti
+
+      button.sidebarBtn(type='button')
+        span
   //
     .logo
       img(src=menu.data.logo_brand.url width='100px')
