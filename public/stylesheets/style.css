@@ -1533,9 +1533,39 @@ footer a {
 
   }
 
+  .sidebar ul {
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    margin: 0;
+  }
+
+  .sidebar ul li {
+    margin: 0;
+    padding: 5px;
+  }
+
+
+  .sidebar ul li a {
+    padding: 5px;
+    color: #333;
+
+    font-size: 1.4em;
+    font-weight: 400;
+
+    text-decoration: none;
+
+  }
+
   .active {
 
-    right: 0px;
+
     width: 100%;
     text-align: center;
 

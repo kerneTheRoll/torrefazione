@@ -64,11 +64,11 @@ $(document).ready(function() {
   $(".sidebarBtn").on("touchstart", function() {
     $(".sidebar").toggleClass("active");
     $(".sidebarBtn").toggleClass("toggle");
-    $(".homepage-banner").toggleClass("offMargin");
+    // $(".homepage-banner").toggleClass("offMargin");
   });
   $(".chiudi").click(function() {
     $(".sidebar").toggleClass("active");
-    $(".homepage-banner").toggleClass("offMargin");
+    //  $(".homepage-banner").toggleClass("offMargin");
     $(".sidebarBtn").toggleClass("toggle");
   });
   $(".chiudi").on("tochstart", function() {
