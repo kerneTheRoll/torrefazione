@@ -53,16 +53,16 @@ block body
          }
       }
 
-  .homepage
+  .homepage(style='background:#100605')
 
     -// Homepage Banner Section
-    section.homepage-banner
+    section.homepage-banner.banner-home
 
-      .banner-content.grid-container
-        h2.banner-title
+      .banner-content.grid-container.banner-home
+        h2.banner-title.font-ultra-bold
           != RichText.asText(home.data.motto)
     section.banner-section-site
-      h2.titolo-sezioni.font-ultra-bold
+      h2.titolo-sezioni.font-ultra-bold.font-mont
         != RichText.asText(home.data.titolo_sezioni)
       .container.black-container
         .row
@@ -80,38 +80,39 @@ block body
 
           .col-md-4.card
             h2.card-title.text-center.text-center.text-dorato.font-ultra-bold
-              != RichText.asText(home.data.titolo_storia)
+              != RichText.asText(home.data.titolo_gruppo)
             p
-              != RichText.asText(home.data.descrizione_storia)
+              != RichText.asText(home.data.descrizione_gruppo)
             .card-footer
                span.float-right
                 i.far.fa-arrow-alt-circle-right
           .col-md-4.card
             h2.card-title.text-center.text-center.text-dorato.font-ultra-bold
-              != RichText.asText(home.data.titolo_storia)
+              != RichText.asText(home.data.i_valori)
             p
-              != RichText.asText(home.data.descrizione_storia)
+              != RichText.asText(home.data.descrizione_valori)
             .card-footer
                span.float-right.icon
                 i.far.fa-arrow-alt-circle-right
-      .container-fluid.mb-5.pb-2
-         h2.text-center.testo-dorato.text-upper.mt-3.font-ultra-bold Scopri i nostri caffè
-         .row.mt-5
-            #slideProdotti
+    .container-fluid.mb-5.pb-2
+         h2.text-center.testo-dorato.text-upper.mt-5.mb-5.font-ultra-bold
+          != RichText.asText(home.data.scopri_prodotto)
+         #slideProdotti
                 each prod in prodotto
-                  .m-0.p-0.container-background
-                      .row
-                        .col-md-6
-                            img.img-fluid(src=prod.data.image.url, alt="")
-                        .col-md-6.d-flex.flex-column.justify-content-center
-                            h5.text-upper.testo-dorato-su-bianco.titolo-caffe
-                             != RichText.asText(prod.data.title)
-                            p.text-black.descrizione-prodotto
-                              != RichText.asText(prod.data.descrizione_prodotto)
-                            a.ban(href=('/'+prod.lang+"/prodotto/"+prod.uid))
-                              != RichText.asText(prod.data.scopri)
 
-         .container-fluid.mt-5.mb-5
+                      .row.container-background.mr-0.pr-0
+
+                          .col-md-6
+                              img.img-fluid(src=prod.data.image.url, alt="")
+                          .col-md-6
+                              h5.text-upper
+                              != RichText.asText(prod.data.title)
+                              p.text-black
+                                != RichText.asText(prod.data.descrizione_prodotto)
+                              a.ban(href=('/'+prod.lang+"/prodotto/"+prod.uid))
+                                != RichText.asText(prod.data.scopri)
+
+    .container-fluid.mt-5.mb-5
               .container.immagine-collaborazione.mb-5
                 h2.testo-dorato.text-upper.text-bold.titolo-collaborazione
                   !=RichText.asText(home.data.titolo_collaborazione)

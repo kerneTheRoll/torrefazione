@@ -6,6 +6,30 @@
 
 }
 
+@font-face {
+  font-family: mont-extra-bold;
+  src: url('./Fonts/Montserrat-Black.ttf');
+
+}
+
+
+@font-face {
+  font-family: mont-normal-text;
+  src: url('./Fonts/Montserrat-Italic.ttf');
+
+}
+
+
+
+.banner-home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
 .banner-section-site {
 
 
@@ -183,15 +207,38 @@ div.card-footer {
 body {
   margin: 0;
   padding: 0;
+  font-family: mont-normal-text;
 }
+
+
 
 .text-black {
   color: #333;
 }
 
+
+.titolo-caffe {
+  font-size: 1.7em;
+}
+
+h2.card-title {
+  font-size: 1.7em;
+}
+
 .box {
   height: 500px;
 
+}
+
+.rigaprod {
+  background: #fff;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .table td {
@@ -229,9 +276,10 @@ h5.testo-dorato-su-bianco {
 .container-background {
   margin-top: 40px;
   background: #f0f0f0;
-
+  padding: 10px;
 
   border: 8px solid;
+
 
   border-image: url('../images/dorato.jpg')30;
 }
@@ -266,6 +314,10 @@ h5.testo-dorato-su-bianco {
   font-family: 'Montserrat', sans-serif;
   z-index: 9999999;
 
+}
+
+.font-mont {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .tabella-prodotti {
@@ -346,9 +398,9 @@ div.logo {
 .sidebarBtn {
   position: absolute;
   top: 10px;
-  right: -60px;
+  right: -80px;
 
-  color: #fff;
+  color: #ddcfb4;
   width: 50px;
   height: 50px;
   box-sizing: border-box;
@@ -372,7 +424,7 @@ div.logo {
   display: block;
   width: 35px;
   height: 2px;
-  background: #fff;
+  background: #ddcfb4;
   position: absolute;
   top: 24;
   transition: .3s;
@@ -385,7 +437,7 @@ div.logo {
   display: block;
 
   height: 2px;
-  background: #fff;
+  background: #ddcfb4;
   position: absolute;
   left: 0;
   top: -10;
@@ -403,7 +455,7 @@ span.icon:hover {
   display: block;
 
   height: 2px;
-  background: #fff;
+  background: #ddcfb4;
   position: absolute;
   left: 0;
   top: 10;
@@ -605,7 +657,7 @@ span.icon:hover {
   text-align: left;
   max-width: 720px;
   margin-left: 80px;
-  margin-top: 150px;
+  margin-top: 50px;
 
 }
 
@@ -625,7 +677,8 @@ span.icon:hover {
 }
 
 .font-ultra-bold {
-  font-weight: 900;
+
+  font-family: mont-extra-bold;
 }
 
 
