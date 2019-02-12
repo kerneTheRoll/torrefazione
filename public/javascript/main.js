@@ -1,4 +1,63 @@
 $(document).ready(function() {
+  $(".titolo-centro").hide();
+  $("h2.titoloCover").click(function() {
+    if ($(".container-element").css("display") == "block") {
+      $("h2.titoloCover").attr("data-target", "#exampleModal");
+      $("h2.titoloCover").attr("data-toggle", "modal");
+    } else {
+      console.log("contenitore non si vede siamo in desktop");
+    }
+  });
+  $(".blocco-paragrafo-ristorante").show();
+  $(".titolo-sinistra").click(function() {
+    $(this).hide();
+    $(".blocco-paragrafo-bar").fadeIn();
+    $(".blocco-paragrafo-ristorante").hide();
+    $(".blocco-paragrafo-ufficio").hide();
+    $(".titolo-centro").show();
+    $(".titolo-destra").show();
+    $(".bubble").addClass("cambioFrecciaSinistra");
+
+    $(".bubble").removeClass("cambioFrecciaDestra");
+    $(this)
+      .prev()
+      .removeClass("blurred");
+    $(".im-centro").addClass("blurred");
+    $(".im-destra").addClass("blurred");
+  });
+  $(".titolo-centro").click(function() {
+    $(".blocco-paragrafo-bar").fadeOut();
+    $(this).hide();
+    $(".titolo-destra").show();
+    $(".titolo-sinistra").show();
+    $(".blocco-paragrafo-ristorante").fadeIn();
+    $(".blocco-paragrafo-bar").hide();
+    $(".blocco-paragrafo-ufficio").hide();
+    $(".bubble").removeClass("cambioFrecciaSinistra");
+    $(".bubble").removeClass("cambioFrecciaDestra");
+    $(this)
+      .prev()
+      .removeClass("blurred");
+    $(".im-sinistra").addClass("blurred");
+    $(".im-destra").addClass("blurred");
+  });
+  $(".titolo-Destra").click(function() {
+    $(this).hide();
+    $(".blocco-paragrafo-bar").fadeOut();
+    $(".titolo-centro").show();
+    $(".titolo-sinistra").show();
+    $(".blocco-paragrafo-ristorante").hide();
+    $(".blocco-paragrafo-bar").hide();
+    $(".blocco-paragrafo-ufficio").fadeIn();
+    $(".bubble").addClass("cambioFrecciaDestra");
+    $(".bubble").removeClass("cambioFrecciaSinistra");
+
+    $(this)
+      .prev()
+      .removeClass("blurred");
+    $(".im-centro").addClass("blurred");
+    $(".im-sinistra").addClass("blurred");
+  });
   $("#image-slider").lightSlider({
     gallery: false,
     auto: true,

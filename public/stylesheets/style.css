@@ -19,7 +19,28 @@
 
 }
 
+@font-face {
+  font-family: mont-medium-text;
+  src: url('./Fonts/Montserrat-Medium.ttf');
 
+}
+
+#exampleModal {
+  display: none;
+}
+
+
+.titoloCover {
+  font-family: mont-extra-bold;
+}
+
+.testo-sottile {
+  font-family: mont-normal-text;
+}
+
+.sottoTitolo-servizi {
+  font-family: mont-normal-text;
+}
 
 .banner-home {
   height: 100vh;
@@ -204,6 +225,12 @@ div.card-footer {
   color: #dab722;
 }
 
+.card-storia>p {
+  padding-top: 40px;
+  min-height: 270px;
+
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -284,7 +311,96 @@ h5.testo-dorato-su-bianco {
   border-image: url('../images/dorato.jpg')30;
 }
 
+.bubble {
+  background-color: #F2F2F2;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px #B2B2B2;
+  height: content;
+  margin: 10px auto;
+  width: 100%;
 
+
+}
+
+.titoloCover {
+  cursor: pointer;
+}
+
+.bubble::before {
+  background-color: #F2F2F2;
+
+  content: "\00a0";
+  display: block;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: -10px;
+
+  transform: rotate(45deg);
+  width: 50px;
+  transition: all .3s;
+}
+
+
+
+.bubble.cambioFrecciaSinistra::before {
+  background-color: #F2F2F2;
+
+  content: "\00a0";
+  display: block;
+  height: 50px;
+  margin-left: 50px;
+  margin-right: auto;
+  position: relative;
+  top: -10px;
+
+  transform: rotate(45deg);
+  width: 50px;
+}
+
+.bubble div {
+  display: none;
+}
+
+.bubble div>h3 {
+  color: #626262;
+  font-family: mont-medium-text;
+}
+
+.descrizione-servizio {
+  padding: 20px;
+
+}
+
+.bubble.cambioFrecciaDestra::before {
+  background-color: #F2F2F2;
+
+  content: "\00a0";
+  display: block;
+  height: 50px;
+  margin-left: auto;
+  margin-right: 50px;
+  position: relative;
+  top: -10px;
+
+  transform: rotate(45deg);
+  width: 50px;
+}
+
+.bordo-oro {
+  border: 8px solid;
+
+
+  border-image: url('../images/dorato.jpg')30;
+}
+
+.bordo-oro-bottom {
+  border-bottom: 8px solid;
+
+
+  border-image: url('../images/dorato.jpg')30;
+}
 
 .container-background:nth-of-type(1) {
   border-left: 0;
@@ -525,32 +641,56 @@ span.icon:hover {
   border: 0;
 }
 
+.container-element {
+  display: none;
+}
+
 @media (max-width: 767px) {
   h5.text-upper.testo-dorato-su-bianco {
     text-align: center;
   }
 
-
-
-
-  .descrizione-prodotto {
-    padding: 20px;
+  .container-element {
+    display: block;
   }
 
-  a.ban {
-    text-align: right;
-    margin-right: 20px;
+
+  div.col-md-4.contenitore-ristorante {
+    position: relative;
+
   }
 
-  .site-header {
-    padding-left: 20px;
-    padding-right: 20px;
+  .blurred {
+    -webkit-filter: none;
+    -moz-filter: none;
+    -o-filter: none;
+    -ms-filter: none;
+    filter: none;
+    z-index: 0;
   }
 
-  .site-header nav {
-    margin-top: 30px;
-  }
+
 }
+
+
+.descrizione-prodotto {
+  padding: 20px;
+}
+
+a.ban {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.site-header {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.site-header nav {
+  margin-top: 30px;
+}
+
 
 .homepage-banner {
   margin: -70 0 40px;
@@ -605,6 +745,8 @@ span.icon:hover {
 
 }
 
+
+
 .blurred {
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
@@ -614,9 +756,10 @@ span.icon:hover {
   z-index: 0;
 }
 
+
 .titoloCover {
-  z-index: 99999;
-  font-size: 60px;
+  z-index: 9;
+  font-size: 50px;
   position: absolute;
 }
 
@@ -775,10 +918,31 @@ p {
   line-height: 1.5;
 }
 
+div.modal div.modal-backdrop {
+  z-index: 0;
+}
+
 @media (max-width: 767px) {
   h1 {
     font-size: 32px;
     line-height: 40px;
+  }
+
+  #exampleModal {
+    display: block;
+  }
+
+  .blurred {
+    -webkit-filter: none;
+    -moz-filter: none;
+    -o-filter: none;
+    -ms-filter: none;
+    filter: none;
+    z-index: 0;
+  }
+
+  .bubble {
+    display: none;
   }
 
   .arrow-left,
