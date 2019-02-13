@@ -110,6 +110,27 @@ app.get(I18NUrl("/servizi"), (req, res, next) => {
       next(`error when retriving homepage ${error.message}`);
     });
 });
+app.get(I18NUrl("/storia"), (req, res, next) => {
+  req.prismic.api
+    .getSingle("storia", I18NConfig(req))
+    .then(storia => {
+      res.render("storia", { storia: storia });
+    })
+    .catch(error => {
+      next(`error when retriving homepage ${error.message}`);
+    });
+});
+app.get(I18NUrl("/contatti"), (req, res, next) => {
+  req.prismic.api
+    .getSingle("contatti", I18NConfig(req))
+    .then(contatti => {
+      res.render("contatti", { contatti: contatti });
+    })
+    .catch(error => {
+      next(`error when retriving homepage ${error.message}`);
+    });
+});
+
 // Route for pages
 app.get(I18NUrl("/page/:uid"), (req, res, next) => {
   const uid = req.params.uid;

@@ -1,0 +1,51 @@
+extends ./layout.pug
+
+block variables
+  - var nav_class = 'dark'
+  - var activeDoc = storia
+  - var tablet = storia.data.cover_storia.url
+
+block body
+  style(type="text/css").
+       .mysection{
+            background-image:url(#{tablet});
+
+            height:75vh;
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position:center;
+         }
+
+  section.mysection.d-flex.flex-column.justify-content-center.align-items-center
+    .banner-content.banner-content-storia
+
+          h1.banner-title.font-ultra-bold.text-center.testo-dorato
+            != RichText.asText(storia.data.titolo_cover)
+          h2.text-center.text-dorato
+            != RichText.asText(storia.data.sottotitolo_cover)
+          div.blocco-dorato.bordo-oro
+  .container-fluid.bg-black
+    p.descrizione-storia.text-center.px-md-5.py-5
+      != RichText.asText(storia.data.descrizione_storia)
+      div.container-fluid
+        img.img-fluid.img-storia.bordo-oro-bottom(src=storia.data.image_storia.url)
+  .container-fluid
+    .row.mt-5
+      .col-md-6
+        div
+          img.myimg(src=storia.data.immagine_storia_colonna1.url)
+      .col-md-6
+        h2.text-dorato.text-center
+          !=RichText.asText(storia.data.titolo_colonna1)
+        p.descrizione-storia.py-5.px-md-5
+          !=RichText.asText(storia.data.descrizione_colonna_1)
+  .container-fluid.mt-5.px-md-5
+    .row.px-md-5
+      .col-md-6.px-md-5
+        .container
+          h2.text-dorato.text-right
+            !=RichText.asText(storia.data.titolo_colonna1)
+          p.descrizione-storia.py-md-5
+            !=RichText.asText(storia.data.descrizione_colonna_1)
+      .col-md-6
+          img.myimg.bordo-oro-bottom(src=storia.data.immagine_colonna2.url)

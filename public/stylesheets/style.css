@@ -24,7 +24,11 @@
   src: url('./Fonts/Montserrat-Medium.ttf');
 
 }
-
+.myimg{
+  display: block;
+  max-height:500px;
+  margin:0 auto;
+}
 #exampleModal {
   display: none;
 }
@@ -290,7 +294,14 @@ h5.text-upper.testo-dorato-su-bianco {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent
 }
-
+.bg-black{
+  background:black;
+}
+.descrizione-storia{
+  font-size:1.7em;
+  color:#fff;
+  font-family: mont-normal-text
+}
 h5.testo-dorato-su-bianco {
   color: rgb(236, 161, 39);
   /*if no support for background-clip*/
@@ -298,6 +309,11 @@ h5.testo-dorato-su-bianco {
   background: -o-linear-gradient(transparent, transparent);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.img-storia{
+  max-height: 700px;
+  display: block;
+  margin:0 auto;
 }
 
 .container-background {
@@ -401,7 +417,14 @@ h5.testo-dorato-su-bianco {
 
   border-image: url('../images/dorato.jpg')30;
 }
-
+.banner-content-storia{
+  margin-top:100px;
+  line-height: 50px;
+}
+.blocco-dorato{
+  width:100px;
+  margin:100px auto;
+}
 .container-background:nth-of-type(1) {
   border-left: 0;
 }
@@ -653,7 +676,9 @@ span.icon:hover {
   .container-element {
     display: block;
   }
-
+  .inp {
+    margin-bottom: 10px;
+  }
 
   div.col-md-4.contenitore-ristorante {
     position: relative;
@@ -720,9 +745,10 @@ a.ban {
   position: absolute;
 
   font-size: 2em;
-  height: 100%;
+  
   z-index: 30000;
   cursor: pointer;
+
 
 }
 
@@ -770,11 +796,13 @@ a.ban {
 .arrow-left {
   left: 25px;
   top: 25%;
+ 
 }
 
 .arrow-right {
   right: 10px;
   top: 25%;
+  
 }
 
 .logo-container {
@@ -1738,6 +1766,50 @@ footer a {
   color: #fff;
   display: none;
 }
+.contactme{
+  padding:10px;
+  margin-top:100px;
+}
+textarea {
+  background:#ddceb7;
+  
+  width:98%;
+}
+select#scelta{
+  width:98%;
+}
+input[type='text'],input[type='email'],input[type='phone'],t{
+  background:#ddceb7;
+}
+
+.mybtn{
+  
+  float: right;
+ 
+  display: block;
+  width:100px;
+}
+form{
+  margin-bottom:100px;
+}
+select.form-control.bg-coffe
+{
+  background:#ddceb7;
+}
+
+div.footer{
+  height:80px;
+  background: rgba(255,204,102,1);
+  background: -moz-linear-gradient(left, rgba(255,204,102,1) 0%, rgba(227,176,74,1) 25%, rgba(204,153,51,1) 46%, rgba(180,129,51,1) 71%, rgba(153,102,51,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,204,102,1)), color-stop(25%, rgba(227,176,74,1)), color-stop(46%, rgba(204,153,51,1)), color-stop(71%, rgba(180,129,51,1)), color-stop(100%, rgba(153,102,51,1)));
+  background: -webkit-linear-gradient(left, rgba(255,204,102,1) 0%, rgba(227,176,74,1) 25%, rgba(204,153,51,1) 46%, rgba(180,129,51,1) 71%, rgba(153,102,51,1) 100%);
+  background: -o-linear-gradient(left, rgba(255,204,102,1) 0%, rgba(227,176,74,1) 25%, rgba(204,153,51,1) 46%, rgba(180,129,51,1) 71%, rgba(153,102,51,1) 100%);
+  background: -ms-linear-gradient(left, rgba(255,204,102,1) 0%, rgba(227,176,74,1) 25%, rgba(204,153,51,1) 46%, rgba(180,129,51,1) 71%, rgba(153,102,51,1) 100%);
+  background: linear-gradient(to right, rgba(255,204,102,1) 0%, rgba(227,176,74,1) 25%, rgba(204,153,51,1) 46%, rgba(180,129,51,1) 71%, rgba(153,102,51,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcc66', endColorstr='#996633', GradientType=1 );
+  display:flex;
+  flex-direction: column;
+}
 
 @media screen and (max-width:420px) {
   .homepage-banner .banner-content .banner-title {
@@ -1750,7 +1822,20 @@ footer a {
     margin-top: 80px;
 
   }
-
+  .banner-content.banner-content-storia h2{
+    font-size:20px;
+  }
+  .sottoTitolo-servizi{
+    font-weight: bold;
+    font-size:25px;
+  }
+  .banner-content.banner-content-storia h1{
+    font-size:25px;
+  }
+  .banner-content.banner-content-storia{
+    padding-top:50px;
+    margin-top:100px;
+  }
   .sidebar {
     display: flex;
     flex-direction: column;

@@ -19,6 +19,7 @@ module.exports = {
     if (doc.type == "prodotti") return `/${doc.lang}/prodotti`;
     if (doc.type == "servizi") return `/${doc.lang}/servizi`;
     if (doc.type == "contatti") return `/${doc.lang}/contatti`;
+    if (doc.type == "storia") return `/${doc.lang}/storia`;
     return "/";
   }
 };

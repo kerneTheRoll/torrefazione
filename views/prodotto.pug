@@ -8,22 +8,22 @@ block body
 
   -// Content Section
 
-   .homepage(style='background:black;')
+  .homepage(style='background:black;')
 
     -// Homepage Banner Section
     section.homepage-banner-2
        .container.mt-5.pt-3
           h2.testo-dorato.pr-5.mt-5.text-center.text-extra-bold Prodotti
 
-    div(style='position:relative')
+    div.container-fluid(style='position:relative')
 
-        .arrow-left
-          i.fas.fa-arrow-circle-left
-           #testoPrevSlide
-        .arrow-right
-          i.fas.fa-arrow-circle-right
-           #testoNexSlide
-        #slideProdottiPagina(style='position:relative')
+      .arrow-left
+            i.fas.fa-arrow-circle-left
+              #testoPrevSlide
+      .arrow-right
+            i.fas.fa-arrow-circle-right
+              #testoNexSlide
+      #slideProdottiPagina
 
             each prod in prodotto
                 .container-fluid.mt-5(style='background:black;color:#fff;')
@@ -153,6 +153,7 @@ block body
             if (el.getCurrentSlideCount() === 1 ){
 
                $('.arrow-left').addClass('hide')
+
                trovaNomeProssimaSlide(el.getCurrentSlideCount(),el);
 
             }

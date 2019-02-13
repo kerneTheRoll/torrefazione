@@ -1,0 +1,88 @@
+extends ./layout.pug
+
+block variables
+  - var nav_class = 'dark'
+  - var activeDoc = contatti
+  - var tablet = contatti.data.cover_contatti.url
+
+block body
+  style(type="text/css").
+       .mysection-contatti{
+            background-image:url(#{tablet});
+            height:30vh;
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position:center;
+
+         }
+         .mybtn{background:#ac8425;color:#fff;}
+
+
+  section.mysection-contatti.d-flex.flex-column.justify-content-center.align-items-center
+     .banner-content.banner-content-storia
+
+          h1.banner-title.font-ultra-bold.text-center(style='color:#d3c4a7')
+            != RichText.asText(contatti.data.contatti)
+
+
+  .container-fluid.bg-black
+    .row
+      .col-md-6
+        form(method="post" action='/'+contatti.lang+'/contatti' name='contatti' id='contatta').container-fluid.pl-5.contactme
+
+
+          input#language(type="hidden" value=contatti.lang)
+          .container-fluid.row
+            .col-md-4.inp
+
+              input(type="text" placeholder=RichText.asText(contatti.data.form_nome) name='nome').form-control#nome
+            .col-md-4.inp
+              input(type="text" placeholder=RichText.asText(contatti.data.form_cognome) name='cognome').form-control#cognome
+            .col-md-4.inp
+                input(type="email" placeholder=RichText.asText(contatti.data.form_email) name='email').form-control#email
+
+
+          .container-fluid.row.pt-4
+
+            .col-md-4.inp
+                select(name='country')#country.form-control.bg-coffe
+
+
+
+
+
+
+            .col-md-4.inp
+                input#postalCode.form-control(type='text' placeholder=RichText.asText(contatti.data.form_cap) name='cap')
+
+
+
+            .col-md-4.inp
+                input#postalPlace.form-control(type='text' placeholder=RichText.asText(contatti.data.form_citta) name='citta')
+
+          .container-fluid.row.pt-4
+            .col-md-12.inp
+                input(type="phone" placeholder=RichText.asText(contatti.data.form_telefono) name='telefono').form-control#telefono
+          .container-fluid.row.pt-4.blue-color.pl-4
+
+
+                .col-md-12
+                select(name='scelta').form-control#scelta.bg-coffe
+                  option(value='niente', disabled='', selected='true')
+                    != RichText.asText(contatti.data.servizi_interessi)
+                  option(value=RichText.asText(contatti.data.servizio_apertura) )
+                    !=RichText.asText(contatti.data.servizio_apertura)
+                  option(value=RichText.asText(contatti.data.info_prodotti) )
+                    !=RichText.asText(contatti.data.info_prodotti)
+                  option(value=RichText.asText(contatti.data.appuntamento) )
+                    !=RichText.asText(contatti.data.appuntamento)
+                  option(value=RichText.asText(contatti.data.ferie_eventi) )
+                    !=RichText.asText(contatti.data.ferie_eventi)
+
+
+          .container-fluid.row.pt-4.blue-color.pl-4.textarealabel#content
+                textarea#richiesta.form-controll.py-3(name="richiesta", placeholder=RichText.asText(contatti.data.form__richiesta))
+          .container-fluid.row.pt-4.blue-color.pl-4
+                button(type='submit').btn.mybtn#sub
+                    != RichText.asText(contatti.data.bottone_invia)
+

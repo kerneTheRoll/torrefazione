@@ -62,31 +62,31 @@ block body
                       !=RichText.asText(servizio.data.titoloufficio)
 
       // Modal
-  div.container-fluid(style='position:relative')
-    #exampleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
-        .modal-dialog.modal-dialog-centered(role='document')
-          .modal-content
-            .modal-header
-              h5#exampleModalLabel
-              button.close(type='button', data-dismiss='modal', aria-label='Close')
-                span(aria-hidden='true') &times;
-            .modal-body
-                div.blocco-paragrafo-bar
+        div.container-fluid(style='position:relative')
+          #exampleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+              .modal-dialog.modal-dialog-centered(role='document')
+                .modal-content
+                  .modal-header
+                    h5#exampleModalLabel
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                      span(aria-hidden='true') &times;
+                  .modal-body
+                      div.blocco-paragrafo-bar
 
-                    h3.text-center
-                      !=RichText.asText(servizio.data.titolo_bar)
-                div.blocco-paragrafo-ristorante
-                    h3.text-center
-                      !=RichText.asText(servizio.data.titoloristorante)
-                    h4.sotto-titolo.text-center.testo-dorato.text-upper.text-extra-bold
-                      !=RichText.asText(servizio.data.sotto_titolo_ristorante)
-                    p.descrizione-servizio.text-center
-                      !=RichText.asText(servizio.data.descrizioneristorante)
-                div.blocco-paragrafo-ufficio
-                    h3.text-center
-                      !=RichText.asText(servizio.data.titoloufficio)
-            .modal-footer
-              button.btn.btn-secondary(type='button', data-dismiss='modal') Chiudi
+                          h3.text-center
+                            !=RichText.asText(servizio.data.titolo_bar)
+                      div.blocco-paragrafo-ristorante
+                          h3.text-center
+                            !=RichText.asText(servizio.data.titoloristorante)
+                          h4.sotto-titolo.text-center.testo-dorato.text-upper.text-extra-bold
+                            !=RichText.asText(servizio.data.sotto_titolo_ristorante)
+                          p.descrizione-servizio.text-center
+                            !=RichText.asText(servizio.data.descrizioneristorante)
+                      div.blocco-paragrafo-ufficio
+                          h3.text-center
+                            !=RichText.asText(servizio.data.titoloufficio)
+                  .modal-footer
+                    button.btn.btn-secondary(type='button', data-dismiss='modal') Chiudi
 
 
 
