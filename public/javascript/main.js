@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  new WOW().init();
   $(".titolo-centro").hide();
   $("h2.titoloCover").click(function() {
     if ($(".container-element").css("display") == "block") {
@@ -118,6 +119,8 @@ $(document).ready(function() {
     $(".sidebar").toggleClass("active");
     $(".sidebarBtn").toggleClass("toggle");
     //$(".homepage-banner").toggleClass("offMargin");
+    $(".animation-menu a,.animation-menu").toggleClass("animated  fadeInLeft");
+
     console.log(this);
   });
   $(".sidebarBtn").on("touchstart", function() {

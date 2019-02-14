@@ -67,8 +67,17 @@ app.use(I18NUrl(), (req, res, next) => {
   req.prismic.api
     .getSingle("menu", I18NConfig(req))
     .then(menu => {
-      res.locals.menu = menu;
-      next();
+      req.prismic.api
+        .query(Prismic.Predicates.at("document.type", "category"))
+        .then(function(response) {
+          res.locals.categ = response.results;
+          res.locals.menu = menu;
+
+          next();
+        })
+        .catch(err => {
+          next(`Error getting menu from prismic: ${error.message}`);
+        });
     })
     .catch(err => {
       next(`Error getting menu from prismic: ${error.message}`);
@@ -86,13 +95,23 @@ app.get(I18NUrl("/"), (req, res, next) => {
     .getSingle("homepage", I18NConfig(req))
     .then(home => {
       req.prismic.api
-        .query(Prismic.Predicates.at("document.type", "prodotto"), {
-          orderings: "[my.prodotto.title]"
-        })
+        .query(
+          [
+            Prismic.Predicates.at("document.type", "prodotto"),
+            Prismic.Predicates.at("my.prodotto.mostra_in_home", 1)
+          ],
+
+          {
+            orderings: "[my.prodotto.title]"
+          }
+        )
         .then(function(response) {
           // response is the response object, response.results holds the documents
 
-          res.render("homepage", { home: home, prodotto: response.results });
+          res.render("homepage", {
+            home: home,
+            prodotto: response.results
+          });
         });
     })
     .catch(error => {

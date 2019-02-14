@@ -53,13 +53,13 @@ block body
          }
       }
 
-  .homepage(style='background:#100605')
+  .homepage(style='background:#100605;')
 
     -// Homepage Banner Section
     section.homepage-banner.banner-home
 
       .banner-content.grid-container.banner-home
-        h2.banner-title.font-ultra-bold
+        h2.banner-title.font-ultra-bold.text-dorato-immagine
           != RichText.asText(home.data.motto)
     section.banner-section-site
       h2.titolo-sezioni.font-ultra-bold.font-mont
@@ -102,11 +102,11 @@ block body
 
                       .row.container-background.mr-0.pr-0
 
-                          .col-md-6
+                          .col-md-6.wow.bounceInUp
                               img.img-fluid(src=prod.data.image.url, alt="")
-                          .col-md-6
-                              h5.text-upper
-                              != RichText.asText(prod.data.title)
+                          .col-md-6.d-flex.flex-column.justify-content-center
+                              h5.text-upper.testo-dorato.text-extra-bold
+                               != RichText.asText(prod.data.title)
                               p.text-black
                                 != RichText.asText(prod.data.descrizione_prodotto)
                               a.ban(href=('/'+prod.lang+"/prodotto/"+prod.uid))

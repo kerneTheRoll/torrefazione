@@ -12,56 +12,56 @@ block body
    .homepage(style='background:black;')
 
     -// Homepage Banner Section
-    section.homepage-banner(style='background-image:url('+servizio.data.coverservizi.url+')')
-       .container.mt-5.pt-3
-          h1.testo-dorato.mt-5.text-center.text-extra-bold.titolo-servizi
-            != RichText.asText(servizio.data.titolo_servizi)
-          h4.testo-dorato.text-center.sottoTitolo-servizi
-            != RichText.asText(servizio.data.sottotitolo)
+      section.homepage-banner(style='background-image:url('+servizio.data.coverservizi.url+')')
+        .container.mt-5.pt-3
+            h1.testo-dorato.mt-5.text-center.text-extra-bold.titolo-servizi
+              != RichText.asText(servizio.data.titolo_servizi)
+            h4.testo-dorato.text-center.sottoTitolo-servizi
+              != RichText.asText(servizio.data.sottotitolo)
 
-    .container
-        h2.text-center.motto-servizi.arancone-testo.testo-sottile
-          !=RichText.asText(servizio.data.motto)
+      .container
+          h2.text-center.motto-servizi.arancone-testo.testo-sottile
+            !=RichText.asText(servizio.data.motto)
 
-    .container-fluid(style='height:')
-      .row.servizi-container.bordo-oro-bottom
+      .container-fluid(style='height:')
+        .row.servizi-container.bordo-oro-bottom
 
-          .col-md-4.d-flex.flex-column.justify-content-center.align-items-center
-            div.servizi-image.blurred.im-sinistra(style='background-image:url('+servizio.data.immaginebar.url+');')
-            h2.testo-dorato.titoloCover.titolo-sinistra(style='position:relative;cursor:pointer')
-                !=RichText.asText(servizio.data.titolo_bar)
+            .col-md-4.d-flex.flex-column.justify-content-center.align-items-center
+              div.servizi-image.blurred.im-sinistra(style='background-image:url('+servizio.data.immaginebar.url+');')
+              h2.testo-dorato.titoloCover.titolo-sinistra(style='position:relative;cursor:pointer')
+                  !=RichText.asText(servizio.data.titolo_bar)
 
 
 
-          .col-md-4.d-flex.flex-column.justify-content-center.align-items-center.contenitore-ristorante
-            .container-element
-            div.servizi-image.im-centro(style='background-image:url('+servizio.data.immagineristorante.url+');')
+            .col-md-4.d-flex.flex-column.justify-content-center.align-items-center.contenitore-ristorante
+              .container-element
+              div.servizi-image.im-centro(style='background-image:url('+servizio.data.immagineristorante.url+');')
 
-            h2.testo-dorato.titoloCover.titolo-centro
-                !=RichText.asText(servizio.data.titoloristorante)
-          .col-md-4.d-flex.flex-column.justify-content-center.align-items-center
-            div.servizi-image.blurred.im-destra(style='background-image:url('+servizio.data.immagineufficio.url+');')
+              h2.testo-dorato.titoloCover.titolo-centro
+                  !=RichText.asText(servizio.data.titoloristorante)
+            .col-md-4.d-flex.flex-column.justify-content-center.align-items-center
+              div.servizi-image.blurred.im-destra(style='background-image:url('+servizio.data.immagineufficio.url+');')
 
-            h2.testo-dorato.titoloCover.titolo-destra( )
-                !=RichText.asText(servizio.data.titoloufficio)
-      .container-fluid
-          .bubble
-              div.blocco-paragrafo-bar
+              h2.testo-dorato.titoloCover.titolo-destra( )
+                  !=RichText.asText(servizio.data.titoloufficio)
+        .container-fluid
+            .bubble
+                div.blocco-paragrafo-bar
 
-                    h3.text-center
-                      !=RichText.asText(servizio.data.titolo_bar)
-              div.blocco-paragrafo-ristorante
-                    h3.text-center
-                      !=RichText.asText(servizio.data.titoloristorante)
-                    h4.sotto-titolo.text-center.testo-dorato.text-upper.text-extra-bold
-                      !=RichText.asText(servizio.data.sotto_titolo_ristorante)
-                    p.descrizione-servizio.text-center
-                      !=RichText.asText(servizio.data.descrizioneristorante)
-              div.blocco-paragrafo-ufficio
-                    h3.text-center
-                      !=RichText.asText(servizio.data.titoloufficio)
+                      h3.text-center
+                        !=RichText.asText(servizio.data.titolo_bar)
+                div.blocco-paragrafo-ristorante
+                      h3.text-center
+                        !=RichText.asText(servizio.data.titoloristorante)
+                      h4.sotto-titolo.text-center.testo-dorato.text-upper.text-extra-bold
+                        !=RichText.asText(servizio.data.sotto_titolo_ristorante)
+                      p.descrizione-servizio.text-center
+                        !=RichText.asText(servizio.data.descrizioneristorante)
+                div.blocco-paragrafo-ufficio
+                      h3.text-center
+                        !=RichText.asText(servizio.data.titoloufficio)
 
-      // Modal
+
         div.container-fluid(style='position:relative')
           #exampleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
               .modal-dialog.modal-dialog-centered(role='document')

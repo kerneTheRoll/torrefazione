@@ -24,14 +24,19 @@
   src: url('./Fonts/Montserrat-Medium.ttf');
 
 }
-.myimg{
+
+.myimg {
   display: block;
-  max-height:500px;
-  margin:0 auto;
+  max-height: 500px;
+  margin: 0 auto;
 }
+
 #exampleModal {
   display: none;
 }
+
+
+
 
 
 .titoloCover {
@@ -229,16 +234,44 @@ div.card-footer {
   color: #dab722;
 }
 
+
+
 .card-storia>p {
-  padding-top: 40px;
+
   min-height: 270px;
 
+}
+
+.card-storia {
+  padding-top: 20px;
+}
+
+.categorie h4 {
+
+  padding: 5px;
+}
+
+.lista-categorie li {
+  font-size: 14px;
+  border-bottom: 0;
+
+}
+
+html {
+  width: 100%;
+}
+
+.lista-categorie li a {
+  padding: 0;
+  margin-right: 10px;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: mont-normal-text;
+
+
 }
 
 
@@ -294,14 +327,17 @@ h5.text-upper.testo-dorato-su-bianco {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent
 }
-.bg-black{
-  background:black;
+
+.bg-black {
+  background: black;
 }
-.descrizione-storia{
-  font-size:1.7em;
-  color:#fff;
+
+.descrizione-storia {
+  font-size: 1.7em;
+  color: #fff;
   font-family: mont-normal-text
 }
+
 h5.testo-dorato-su-bianco {
   color: rgb(236, 161, 39);
   /*if no support for background-clip*/
@@ -310,10 +346,11 @@ h5.testo-dorato-su-bianco {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.img-storia{
+
+.img-storia {
   max-height: 700px;
   display: block;
-  margin:0 auto;
+  margin: 0 auto;
 }
 
 .container-background {
@@ -325,6 +362,13 @@ h5.testo-dorato-su-bianco {
 
 
   border-image: url('../images/dorato.jpg')30;
+}
+
+.text-dorato-immagine {
+  color: white;
+  background: url('../images/dorato.jpg') no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .bubble {
@@ -417,14 +461,17 @@ h5.testo-dorato-su-bianco {
 
   border-image: url('../images/dorato.jpg')30;
 }
-.banner-content-storia{
-  margin-top:100px;
+
+.banner-content-storia {
+  margin-top: 100px;
   line-height: 50px;
 }
-.blocco-dorato{
-  width:100px;
-  margin:100px auto;
+
+.blocco-dorato {
+  width: 100px;
+  margin: 100px auto;
 }
+
 .container-background:nth-of-type(1) {
   border-left: 0;
 }
@@ -508,6 +555,8 @@ div.logo {
 
 .sidebar ul li {
   margin: 15px 0;
+
+
 }
 
 
@@ -676,6 +725,7 @@ span.icon:hover {
   .container-element {
     display: block;
   }
+
   .inp {
     margin-bottom: 10px;
   }
@@ -745,7 +795,7 @@ a.ban {
   position: absolute;
 
   font-size: 2em;
-  
+
   z-index: 30000;
   cursor: pointer;
 
@@ -796,21 +846,34 @@ a.ban {
 .arrow-left {
   left: 25px;
   top: 25%;
- 
+
 }
 
 .arrow-right {
   right: 10px;
   top: 25%;
-  
+
+}
+
+.border-bottom {
+
+  animation-delay: 0.3s;
+}
+
+.animation-menu {
+  margin: inherit
+}
+
+.wrapper-categoria {
+  border: 0;
 }
 
 .logo-container {
   width: 150px;
 
-  position: fixed;
+  position: absolute;
   left: 50%;
-  top: 5%;
+  top: 4%;
   transform: translate(-50%, -50%);
   z-index: 1;
 }
@@ -836,12 +899,12 @@ a.ban {
   font-size: 3em;
   line-height: 60px;
   font-weight: 900;
-  color: rgb(236, 161, 39);
+  /*color: rgb(236, 161, 39);
   /*if no support for background-clip*/
-  background: linear-gradient(to right, #BF953F, #FCF6BA, #e0a933, #FBF5B7, #AA771C);
+  /* background: linear-gradient(to right, #BF953F, #FCF6BA, #e0a933, #FBF5B7, #AA771C);
   background: -o-linear-gradient(transparent, transparent);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;*/
 
 
 
@@ -1766,48 +1829,56 @@ footer a {
   color: #fff;
   display: none;
 }
-.contactme{
-  padding:10px;
-  margin-top:100px;
+
+.contactme {
+  padding: 10px;
+  margin-top: 100px;
 }
+
 textarea {
-  background:#ddceb7;
-  
-  width:98%;
-}
-select#scelta{
-  width:98%;
-}
-input[type='text'],input[type='email'],input[type='phone'],t{
-  background:#ddceb7;
+  background: #ddceb7;
+
+  width: 98%;
 }
 
-.mybtn{
-  
+select#scelta {
+  width: 98%;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='phone'],
+t {
+  background: #ddceb7;
+}
+
+.mybtn {
+
   float: right;
- 
+
   display: block;
-  width:100px;
-}
-form{
-  margin-bottom:100px;
-}
-select.form-control.bg-coffe
-{
-  background:#ddceb7;
+  width: 100px;
 }
 
-div.footer{
-  height:80px;
-  background: rgba(255,204,102,1);
-  background: -moz-linear-gradient(left, rgba(255,204,102,1) 0%, rgba(227,176,74,1) 25%, rgba(204,153,51,1) 46%, rgba(180,129,51,1) 71%, rgba(153,102,51,1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,204,102,1)), color-stop(25%, rgba(227,176,74,1)), color-stop(46%, rgba(204,153,51,1)), color-stop(71%, rgba(180,129,51,1)), color-stop(100%, rgba(153,102,51,1)));
-  background: -webkit-linear-gradient(left, rgba(255,204,102,1) 0%, rgba(227,176,74,1) 25%, rgba(204,153,51,1) 46%, rgba(180,129,51,1) 71%, rgba(153,102,51,1) 100%);
-  background: -o-linear-gradient(left, rgba(255,204,102,1) 0%, rgba(227,176,74,1) 25%, rgba(204,153,51,1) 46%, rgba(180,129,51,1) 71%, rgba(153,102,51,1) 100%);
-  background: -ms-linear-gradient(left, rgba(255,204,102,1) 0%, rgba(227,176,74,1) 25%, rgba(204,153,51,1) 46%, rgba(180,129,51,1) 71%, rgba(153,102,51,1) 100%);
-  background: linear-gradient(to right, rgba(255,204,102,1) 0%, rgba(227,176,74,1) 25%, rgba(204,153,51,1) 46%, rgba(180,129,51,1) 71%, rgba(153,102,51,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcc66', endColorstr='#996633', GradientType=1 );
-  display:flex;
+form {
+  margin-bottom: 100px;
+}
+
+select.form-control.bg-coffe {
+  background: #ddceb7;
+}
+
+div.footer {
+  height: 80px;
+  background: rgba(255, 204, 102, 1);
+  background: -moz-linear-gradient(left, rgba(255, 204, 102, 1) 0%, rgba(227, 176, 74, 1) 25%, rgba(204, 153, 51, 1) 46%, rgba(180, 129, 51, 1) 71%, rgba(153, 102, 51, 1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255, 204, 102, 1)), color-stop(25%, rgba(227, 176, 74, 1)), color-stop(46%, rgba(204, 153, 51, 1)), color-stop(71%, rgba(180, 129, 51, 1)), color-stop(100%, rgba(153, 102, 51, 1)));
+  background: -webkit-linear-gradient(left, rgba(255, 204, 102, 1) 0%, rgba(227, 176, 74, 1) 25%, rgba(204, 153, 51, 1) 46%, rgba(180, 129, 51, 1) 71%, rgba(153, 102, 51, 1) 100%);
+  background: -o-linear-gradient(left, rgba(255, 204, 102, 1) 0%, rgba(227, 176, 74, 1) 25%, rgba(204, 153, 51, 1) 46%, rgba(180, 129, 51, 1) 71%, rgba(153, 102, 51, 1) 100%);
+  background: -ms-linear-gradient(left, rgba(255, 204, 102, 1) 0%, rgba(227, 176, 74, 1) 25%, rgba(204, 153, 51, 1) 46%, rgba(180, 129, 51, 1) 71%, rgba(153, 102, 51, 1) 100%);
+  background: linear-gradient(to right, rgba(255, 204, 102, 1) 0%, rgba(227, 176, 74, 1) 25%, rgba(204, 153, 51, 1) 46%, rgba(180, 129, 51, 1) 71%, rgba(153, 102, 51, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffcc66', endColorstr='#996633', GradientType=1);
+  display: flex;
   flex-direction: column;
 }
 
@@ -1822,20 +1893,25 @@ div.footer{
     margin-top: 80px;
 
   }
-  .banner-content.banner-content-storia h2{
-    font-size:20px;
+
+  .banner-content.banner-content-storia h2 {
+    font-size: 20px;
   }
-  .sottoTitolo-servizi{
+
+  .sottoTitolo-servizi {
     font-weight: bold;
-    font-size:25px;
+    font-size: 25px;
   }
-  .banner-content.banner-content-storia h1{
-    font-size:25px;
+
+  .banner-content.banner-content-storia h1 {
+    font-size: 25px;
   }
-  .banner-content.banner-content-storia{
-    padding-top:50px;
-    margin-top:100px;
+
+  .banner-content.banner-content-storia {
+    padding-top: 50px;
+    margin-top: 100px;
   }
+
   .sidebar {
     display: flex;
     flex-direction: column;

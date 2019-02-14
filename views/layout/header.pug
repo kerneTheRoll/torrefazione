@@ -5,19 +5,26 @@ header#header
         span.float-right.chiudi X
 
 
-      ul
-        li
-          a(href="/" class='w') Home
-        li
+      ul.menu-list
+        li.animation-menu
+          a(href="/" ) Home
+        li.animation-menu
          a(href="/"+menu.lang+"/storia") Azienda
-        li.dropdow
-          a(href="#") Prodotti
+
+        li.wrapper-categoria
+          div.categorie.pb-3
+            h4.text-extra-bold.mt-2.animation-menu I nostri Prodotti
+            ul.lista-categorie
+                li.animation-menu
+                   each element in categ
+                      a(href='/'+element.lang+'/'+'categorie/'+element.uid) #{element.uid}
 
 
-        li
+        li.animation-menu
           a(href="/"+menu.lang+"/servizi") Busnees
-        li
+        li.animation-menu
           a(href="#") Contatti
+
 
       button.sidebarBtn(type='button')
         span

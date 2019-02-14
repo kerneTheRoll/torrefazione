@@ -7,6 +7,7 @@ head
   link(rel="stylesheet", href="/stylesheets/reset.css")
   link(rel='stylesheet', href='/stylesheets/common.css')
   link(rel="stylesheet", href="/stylesheets/style.css")
+  link(rel="stylesheet", href="/stylesheets/animate.css")
   link(type='text/css', rel='stylesheet', href='/javascript/lightSlider/css/lightslider.css')
   link(href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic', rel='stylesheet', type='text/css')
   link(href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic', rel='stylesheet', type='text/css')
@@ -28,11 +29,12 @@ head
   script(src='/javascript/cookies.js')
   script(src='/javascript/main.js')
   script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js", integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp", crossorigin="anonymous")
-body(data-wio-id=activeDoc class='bg-black')
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js")
+body(data-wio-id=activeDoc class='bg-black' style='width:100%;')
 
-include ./layout/header.pug
+  div(style='')
+      include ./layout/header.pug
+      block body
 
-block body
 
-
-include ./layout/footer.pug
+      include ./layout/footer.pug
