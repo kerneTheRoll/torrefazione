@@ -178,8 +178,9 @@ app.get(I18NUrl("/prodotto/:uid"), (req, res, next) => {
       })
 
       .then(function(response) {
+        
         // response is the response object, response.results holds the documents
-
+        
         rispostaFiltrata = response.results.filter(elemento => {
           return elemento.data.categoria.uid === req.categoriaScelta;
         });

@@ -44,19 +44,36 @@ block body
 
               h2.testo-dorato.titoloCover.titolo-destra( )
                   !=RichText.asText(servizio.data.titoloufficio)
-        .container-fluid
+        .container
             .bubble
                 div.blocco-paragrafo-bar
 
                       h3.text-center
                         !=RichText.asText(servizio.data.titolo_bar)
-                div.blocco-paragrafo-ristorante
+                div.blocco-paragrafo-ristorante.px-5
                       h3.text-center
                         !=RichText.asText(servizio.data.titoloristorante)
                       h4.sotto-titolo.text-center.testo-dorato.text-upper.text-extra-bold
                         !=RichText.asText(servizio.data.sotto_titolo_ristorante)
                       p.descrizione-servizio.text-center
                         !=RichText.asText(servizio.data.descrizioneristorante)
+                      h5.text-center.sottotit.mb-3.mt-5
+                        !=RichText.asText(servizio.data.titolo_consulenza_appertura)
+                      p.desc-attiv.text-center.px-5
+                        !=RichText.asText(servizio.data.descrizione_consulenza_apertura)
+                      h5.text-center.sottotit.mb-3.mt-5
+                        !=RichText.asText(servizio.data.consolidamentoattivita)
+                      p.desc-attiv.text-center.px-5
+                        !=RichText.asText(servizio.data.descrizioneconsolidamentoattivita)
+                      h5.text-center.sottotit.mb-3.mt-5
+                        !=RichText.asText(servizio.data.recuperoattivita)
+                      p.desc-attiv.text-center.px-5
+                        !=RichText.asText(servizio.data.descrizionerecuperoattivita)
+                      h5.text-center.sottotit.mb-3.mt-5
+                        !=RichText.asText(servizio.data.sviluppoprodotti)
+                      p.desc-attiv.text-center.px-5.pb-5
+                        !=RichText.asText(servizio.data.descrizionesviluppoprodotti)
+                      
                 div.blocco-paragrafo-ufficio
                       h3.text-center
                         !=RichText.asText(servizio.data.titoloufficio)
@@ -82,6 +99,8 @@ block body
                             !=RichText.asText(servizio.data.sotto_titolo_ristorante)
                           p.descrizione-servizio.text-center
                             !=RichText.asText(servizio.data.descrizioneristorante)
+                          h3.text-center
+                            !=RichText.asText(servizio.data.titolo_consulenza_appertura)
                       div.blocco-paragrafo-ufficio
                           h3.text-center
                             !=RichText.asText(servizio.data.titoloufficio)

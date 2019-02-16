@@ -15,7 +15,7 @@ block body
        .container.mt-5.pt-3
           h2.testo-dorato.pr-5.mt-5.text-center.text-extra-bold Prodotti
 
-    div.container-fluid(style='position:relative')
+    div.container-fluid(style='position:relative;')
 
       .arrow-left
             i.fas.fa-arrow-circle-left
@@ -30,47 +30,69 @@ block body
                   .contenitore-slide.box-background.pt-5
 
                     h5.text-upper.testo-dorato.text-center #{categoria}
-
+                    
 
                     h2.text-upper.testo-dorato.text-center.text-extra-bold
                       !=RichText.asText(prod.data.title)
                     h4.text-upper.testo-dorato.text-center.px-5 caffè in grani per macchina espresso
-                    div.container-fluid
-                     img.img-fluid.centered(src=prod.data.image.url)
-                  .container()
-                    if prod.data.image2
-                      .col
-                          p.px-md-5.py-xs-4.descri-testo.py-md-3
-                            !=RichText.asText(prod.data.descrizione_prodotto)
-                          p.px-md-5.py-xs-4.descri-testo.text-center
-                              span.composizione.arancone-testo.text-extra-bold.text-upper
-                                !=RichText.asText(prod.data.composizione)
-                              span.px-2.composizione-descrizione
-                                !=RichText.asText(prod.data.testo_composizione)
-                          p.px-md-5.py-xs-4.descri-testo.text-center
-                              span.composizione.arancone-testo.text-extra-bold.text-upper
-                                !=RichText.asText(prod.data.titolo_origine)
-                              span.px-2.composizione-descrizione
-                                !=RichText.asText(prod.data.testo_orgine)
-                          p.px-md-5.py-xs-4.descri-testo.text-center
-                              span.imballaggio.text-extra-bold.text-upper.arancone-testo
-                                  != RichText.asText(prod.data.imballaggio)
-                      .col
-                        h2.text-white qui ci sono
+                    div.container-fluid.pb-5
+                     img.immagine-prodotto.centered.wow.fadeInLeft(src=prod.data.image.url)
+                  .container(style='font-size:1.2em;')
+                    if categoria === 'capsule'
+                        .row
+                          .col-md-8
+                              p.px-md-5.py-xs-4.descri-testo.py-md-3.mt-4.text-justify(style='width:80%;margin:10px auto')
+                                      !=RichText.asText(prod.data.descrizione_prodotto)
+                              p.px-md-5.py-xs-4.descri-testo.text-center
+                                        span.composizione.arancone-testo.text-extra-bold.text-upper
+                                          !=RichText.asText(prod.data.composizione)
+                                        span.px-2.composizione-descrizione
+                                          !=RichText.asText(prod.data.testo_composizione)
+                              p.px-md-5.py-xs-4.descri-testo.text-center
+                                        span.composizione.arancone-testo.text-extra-bold.text-upper
+                                          !=RichText.asText(prod.data.titolo_origine)
+                                        span.px-2.composizione-descrizione
+                                          !=RichText.asText(prod.data.testo_orgine)
+                              p.px-md-5.py-xs-4.descri-testo.text-center
+                                        span.imballaggio.text-extra-bold.text-upper.arancone-testo
+                                            != RichText.asText(prod.data.imballaggio)
+                          .col-md-4
+                              img.imageCapsule(src=prod.data.image2.url)
+                      
+                    else
+                              p.px-md-5.py-xs-4.descri-testo.py-md-3.mt-4.text-justify(style='width:80%;margin:10px auto')
+                                      !=RichText.asText(prod.data.descrizione_prodotto)
+                              p.px-md-5.py-xs-4.descri-testo.text-center
+                                        span.composizione.arancone-testo.text-extra-bold.text-upper
+                                          !=RichText.asText(prod.data.composizione)
+                                        span.px-2.composizione-descrizione
+                                          !=RichText.asText(prod.data.testo_composizione)
+                              p.px-md-5.py-xs-4.descri-testo.text-center
+                                        span.composizione.arancone-testo.text-extra-bold.text-upper
+                                          !=RichText.asText(prod.data.titolo_origine)
+                                        span.px-2.composizione-descrizione
+                                          !=RichText.asText(prod.data.testo_orgine)
+                              p.px-md-5.py-xs-4.descri-testo.text-center
+                                        span.imballaggio.text-extra-bold.text-upper.arancone-testo
+                                            != RichText.asText(prod.data.imballaggio)  
 
-                    table.table(style='min-height:550px')
+
+                    table.table(style='min-height:670px;max-width:60%;margin:10px auto')
 
 
                       tbody.tabella-prodotti
-                        tr
+                        tr.tostatura
 
-                          td.text-upper Tostatura
-                          td.testo-dorato.text-upper.text-bold Media
-
-                        tr
-
-                          td.py-3.text-upper.align-middle Intensità
-                          td.py-3
+                          td.text-upper.text-center.align-middle Tostatura
+                          td.testo-dorato.text-upper.text-bold.align-middle Media
+                        
+                      
+                          
+                        
+                        tr(style='padding-bottom:100px')  
+                          
+                          td.py-3.text-upper.align-middle.text-center Intensità
+                          td.py-3.align-middle
                             ul(class='start list-unstyled start-'+prod.data.intensita)
                               li
                               li
@@ -79,8 +101,8 @@ block body
                               li
                         tr
 
-                          td.text-upper.align-middle Aroma
-                          td
+                          td.text-upper.align-middle.text-center Aroma
+                          td.align-middle
                             ul(class='start list-unstyled start-'+prod.data.intensita)
                               li
                               li
@@ -89,8 +111,8 @@ block body
                               li
                         tr
 
-                          td.text-upper.align-middle Corpo
-                          td
+                          td.text-upper.align-middle.text-center Corpo
+                          td.align-middle
                             ul(class='start list-unstyled start-'+prod.data.intensita)
                               li
                               li
@@ -99,7 +121,7 @@ block body
                               li
                         tr
 
-                          td.text-upper.py-4 Persistenza
+                          td.text-upper.py-4.text-center Persistenza
                           td.py-4
                             ul(class='start list-unstyled start-'+prod.data.intensita)
                               li
