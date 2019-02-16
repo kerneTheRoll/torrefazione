@@ -226,7 +226,22 @@ div.card {
 .descrizione-collaborazione {
   font-size: 1.7em;
 }
+.text-contact{
+  color:#827627;
+}
+.rotate.phone{
+  transform: rotate(90deg);
+}
 
+.text-white{
+  color:#fff;
+}
+.marker-icon{
+  font-size: 40px;
+}
+.text-contact{
+  font-size:1.4em;
+}
 div.card-footer {
   background: inherit;
   border: 0;
@@ -805,6 +820,17 @@ a.ban {
 .arancone-testo {
   color: #886833;
 
+}
+.imballaggio{
+  padding: 10px;
+  border-top:2px solid orange;
+  border-bottom:  2px solid orange;
+ 
+  display:block;
+ 
+  width:300px;
+  margin:50px auto;
+  
 }
 
 .servizi-image {
@@ -1839,6 +1865,10 @@ textarea {
   background: #ddceb7;
 
   width: 98%;
+  min-height: 150px;
+}
+.bianco{
+  color:#fff;
 }
 
 select#scelta {

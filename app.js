@@ -143,7 +143,7 @@ app.get(I18NUrl("/contatti"), (req, res, next) => {
   req.prismic.api
     .getSingle("contatti", I18NConfig(req))
     .then(contatti => {
-      res.render("contatti", { contatti: contatti });
+      res.render("contatti", { contatti: contatti, color: "bianco" });
     })
     .catch(error => {
       next(`error when retriving homepage ${error.message}`);
@@ -185,7 +185,7 @@ app.get(I18NUrl("/prodotto/:uid"), (req, res, next) => {
         // console.log(response.results);
         //console.log("passato paramento " + uid);
         // res.render("homepage", { home: home, prodotto: response.results });
-        console.log("abbiamo scelto la categoria " + req.categoriaScelta);
+
         res.render("prodotto", {
           prodotto: rispostaFiltrata,
           numero: uid,

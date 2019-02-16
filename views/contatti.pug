@@ -82,7 +82,31 @@ block body
 
           .container-fluid.row.pt-4.blue-color.pl-4.textarealabel#content
                 textarea#richiesta.form-controll.py-3(name="richiesta", placeholder=RichText.asText(contatti.data.form__richiesta))
-          .container-fluid.row.pt-4.blue-color.pl-4
-                button(type='submit').btn.mybtn#sub
+          .container-fluid.row.pt-4.blue-color.pl-4(style='position:relative')
+                button(type='submit').btn.mybtn#sub(style='position:absolute;right:35px')
                     != RichText.asText(contatti.data.bottone_invia)
+      .col-md-6.container-fluid.pl-5.contactme
+          h2.testo-dorato.text-center
+            !=RichText.asText(contatti.data.nome_azienda)
+          div.text-center.text-dorato.marker-icon
+            i.fas.fa-map-marker-alt
+          .viacap.text-center.mt-2
+            span.text-contact
+              !=RichText.asText(contatti.data.residenza)
+          .viacap.text-center.mt-2
+            span.text-contact
+              !=RichText.asText(contatti.data.localita)
+          div.text-center.text-dorato.marker-icon
+            i.fas.fa-phone.rotate.phone
+          .viacap.text-center.mt-2
+            span.text-contact
+              !=RichText.asText(contatti.data.telefono)
+          .viacap.text-center.mt-2
+            span.text-contact
+              !=RichText.asText(contatti.data.fax)
+          div.text-center.text-dorato.marker-icon
+            i.fas.fa-envelope
+          .viacap.text-center.mt-2
+            span.text-contact
+              !=RichText.asText(contatti.data.email)
 

@@ -7,13 +7,16 @@ header#header
 
       ul.menu-list
         li.animation-menu
-          a(href="/" ) Home
+          a(href=Link.url(menu.data.linkhome, ctx.linkResolver))
+            != RichText.asText(menu.data.home)
         li.animation-menu
-         a(href="/"+menu.lang+"/storia") Azienda
+         a(href=Link.url(menu.data.linkazienda, ctx.linkResolver))
+            != RichText.asText(menu.data.azienda)
 
         li.wrapper-categoria
           div.categorie.pb-3
-            h4.text-extra-bold.mt-2.animation-menu I nostri Prodotti
+            h4.text-extra-bold.mt-2.animation-menu
+              != RichText.asText(menu.data.i_nostri_prodott)
             ul.lista-categorie
                 li.animation-menu
                    each element in categ
@@ -21,9 +24,11 @@ header#header
 
 
         li.animation-menu
-          a(href="/"+menu.lang+"/servizi") Busnees
+          a(href=Link.url(menu.data.linkcontatti, ctx.linkResolver))
+            != RichText.asText(menu.data.contatti)
         li.animation-menu
-          a(href="#") Contatti
+           a(href=Link.url(menu.data.linkservizi, ctx.linkResolver))
+            != RichText.asText(menu.data.servizi)
 
 
       button.sidebarBtn(type='button')

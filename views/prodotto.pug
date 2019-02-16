@@ -38,8 +38,26 @@ block body
                     div.container-fluid
                      img.img-fluid.centered(src=prod.data.image.url)
                   .container()
-                    p.px-md-5.py-md-5.py-xs-4.descri-testo
-                      !=RichText.asText(prod.data.descrizione_prodotto)
+                    if prod.data.image2
+                      .col
+                          p.px-md-5.py-xs-4.descri-testo.py-md-3
+                            !=RichText.asText(prod.data.descrizione_prodotto)
+                          p.px-md-5.py-xs-4.descri-testo.text-center
+                              span.composizione.arancone-testo.text-extra-bold.text-upper
+                                !=RichText.asText(prod.data.composizione)
+                              span.px-2.composizione-descrizione
+                                !=RichText.asText(prod.data.testo_composizione)
+                          p.px-md-5.py-xs-4.descri-testo.text-center
+                              span.composizione.arancone-testo.text-extra-bold.text-upper
+                                !=RichText.asText(prod.data.titolo_origine)
+                              span.px-2.composizione-descrizione
+                                !=RichText.asText(prod.data.testo_orgine)
+                          p.px-md-5.py-xs-4.descri-testo.text-center
+                              span.imballaggio.text-extra-bold.text-upper.arancone-testo
+                                  != RichText.asText(prod.data.imballaggio)
+                      .col
+                        h2.text-white qui ci sono
+
                     table.table(style='min-height:550px')
 
 
@@ -98,7 +116,7 @@ block body
         function trovaNome(){
             $('.contenitore-slide').each(function(index,elem){
                 var text = $.trim($('h2',elem).text());
-                if ( text.toLowerCase() === cristal.toLowerCase()){
+                if ( text.toLowerCase().contain === cristal.toLowerCase()){
                     slide.goToSlide(index);
                     return (index )
                 }else{
