@@ -12,6 +12,8 @@ function I18NUrl(urlPart) {
   return `/:lang(${I18N.languages.map(l => l.key).join("|")})${urlPart || ""}`;
 }
 
+function saluta(){}
+
 function I18NConfig(req, options) {
   return Object.assign(options || {}, { lang: req.params.lang });
 }

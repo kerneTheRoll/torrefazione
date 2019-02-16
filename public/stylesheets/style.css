@@ -59,6 +59,14 @@
   justify-content: center;
 
 }
+div.col-md-4.card.card-storia{
+ padding-left:70px;
+ padding-right:70px;
+ background-image:url('../images/backCard.jpg');
+
+
+ 
+}
 
 .banner-section-site {
 
@@ -90,6 +98,11 @@ div.card {
   color: #dab722;
   text-transform: uppercase;
   padding-top: 10px;
+
+}
+a.text-dorato:hover{
+  text-decoration: none;
+  color:orange;
 
 }
 
@@ -233,8 +246,9 @@ div.card {
   transform: rotate(90deg);
 }
 
-.text-white{
+.text-white2{
   color:#fff;
+  font-size: 1.2em;
 }
 .marker-icon{
   font-size: 40px;

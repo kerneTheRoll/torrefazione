@@ -74,8 +74,9 @@ block body
             p
               != RichText.asText(home.data.descrizione_storia)
             .card-footer
-               span.float-right
-                i.far.fa-arrow-alt-circle-right
+              a(href='/'+home.lang+'/storia').float-right
+               
+                i.far.fa-arrow-alt-circle-right.text-dorato
 
 
           .col-md-4.card.card-storia
@@ -83,17 +84,15 @@ block body
               != RichText.asText(home.data.titolo_gruppo)
             p
               != RichText.asText(home.data.descrizione_gruppo)
-            .card-footer
-               span.float-right
-                i.far.fa-arrow-alt-circle-right
+            
           .col-md-4.card.card-storia
             h2.card-title.text-center.text-center.text-dorato.font-ultra-bold
               != RichText.asText(home.data.i_valori)
             p
               != RichText.asText(home.data.descrizione_valori)
             .card-footer
-               span.float-right.icon
-                i.far.fa-arrow-alt-circle-right
+               a.float-right.icon(href='/'+home.lang+'/servizi')
+                i.far.fa-arrow-alt-circle-right.text-dorato
     .container-fluid.mb-5.pb-2
          h2.text-center.testo-dorato.text-upper.mt-5.mb-5.font-ultra-bold
           != RichText.asText(home.data.scopri_prodotto)
@@ -105,12 +104,13 @@ block body
                           .col-md-6.wow.bounceInUp
                               img.img-fluid(src=prod.data.image.url, alt="")
                           .col-md-6.d-flex.flex-column.justify-content-center
-                              h5.text-upper.testo-dorato.text-extra-bold
-                               != RichText.asText(prod.data.title)
-                              p.text-black
-                                != RichText.asText(prod.data.descrizione_prodotto)
-                              a.ban(href=('/'+prod.lang+"/prodotto/"+prod.uid))
-                                != RichText.asText(prod.data.scopri)
+                            div(style='min-height:450px;display:flex;flex-direction:column;justify-content:center')
+                                h5.text-upper.testo-dorato.text-extra-bold
+                                   != RichText.asText(prod.data.title)
+                                p.text-black.pb-3
+                                  != RichText.asText(prod.data.descrizione_prodotto)
+                                a.text-dorato(href=('/'+prod.lang+"/prodotto/"+prod.uid))
+                                  != RichText.asText(prod.data.scopri)
 
     .container-fluid.mt-5.mb-5
               .container.immagine-collaborazione.mb-5
@@ -118,7 +118,8 @@ block body
                   !=RichText.asText(home.data.titolo_collaborazione)
                 p.text-bianco.descrizione-collaborazione.text-upper
                   !=RichText.asText(home.data.descrizione_collaborazione)
-
+                a.linkContatti.text-center.display-4(href='/'+home.lang+'/contatti')
+                    i.far.fa-arrow-alt-circle-right.text-dorato
 
 
 

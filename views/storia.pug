@@ -35,17 +35,17 @@ block body
         div
           img.myimg(src=storia.data.immagine_storia_colonna1.url)
       .col-md-6
-        h2.text-dorato.text-center
+        h2.text-dorato.px-md-5
           !=RichText.asText(storia.data.titolo_colonna1)
-        p.descrizione-storia.py-5.px-md-5
+        p.descrizione-storia.py-1.px-md-5
           !=RichText.asText(storia.data.descrizione_colonna_1)
   .container-fluid.mt-5.px-md-5
     .row.px-md-5
       .col-md-6.px-md-5
         .container
-          h2.text-dorato.text-right
-            !=RichText.asText(storia.data.titolo_colonna1)
-          p.descrizione-storia.py-md-5
-            !=RichText.asText(storia.data.descrizione_colonna_1)
+          h2.text-dorato
+            !=RichText.asText(storia.data.titolo_colonna_2)
+          p.descrizione-storia.py-md-1
+            !=RichText.asText(storia.data.descrizione_colonna_2)
       .col-md-6
           img.myimg.bordo-oro-bottom(src=storia.data.immagine_colonna2.url)
