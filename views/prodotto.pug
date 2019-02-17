@@ -89,7 +89,7 @@ block body
                             tr(style='padding-bottom:100px')
 
                               td.py-3.text-upper.align-middle.text-center.skil-prod
-                                  != Richtext.asText(prod.data.intensita_titolo)
+                                  != RichText.asText(prod.data.intensita_titolo)
                               td.py-3.align-middle
                                 ul(class='start list-unstyled start-'+prod.data.intensita)
                                   li
@@ -100,7 +100,7 @@ block body
                             tr
 
                               td.text-upper.align-middle.text-center.skil-prod
-                                  != Richtext.asText(prod.data.aroma_titolo)
+                                  != RichText.asText(prod.data.aroma_titolo)
                               td.align-middle
                                 ul(class='start list-unstyled start-'+prod.data.aroma)
                                   li
@@ -111,7 +111,7 @@ block body
                             tr
 
                               td.text-upper.align-middle.text-center.skil-prod
-                                  != Richtext.asText(prod.data.corpo_titolo)
+                                  != RichText.asText(prod.data.corpo_titolo)
                               td.align-middle
                                 ul(class='start list-unstyled start-'+prod.data.corpo)
                                   li
@@ -122,7 +122,7 @@ block body
                             tr
 
                               td.text-upper.py-4.text-center.skil-prod
-                                  != Richtext.asText(prod.data.persistenza_titolo)
+                                  != RichText.asText(prod.data.persistenza_titolo)
                               td.py-4
                                 ul(class='start list-unstyled start-'+prod.data.persistenza)
                                   li
