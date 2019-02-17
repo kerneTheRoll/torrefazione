@@ -60,7 +60,7 @@ block body
                     table.table(style='min-height:550px')
 
 
-                      tbody.tabella-prodotti.text-center
+                      tbody.tabella-prodotti
                         tr
 
                           td.text-upper Tostatura
@@ -80,7 +80,7 @@ block body
 
                           td.text-upper.align-middle Aroma
                           td
-                            ul(class='start list-unstyled start-'+prod.data.aroma)
+                            ul(class='start list-unstyled start-'+prod.data.intensita)
                               li
                               li
                               li
@@ -90,7 +90,7 @@ block body
 
                           td.text-upper.align-middle Corpo
                           td
-                            ul(class='start list-unstyled start-'+prod.data.corpo)
+                            ul(class='start list-unstyled start-'+prod.data.intensita)
                               li
                               li
                               li
@@ -100,16 +100,14 @@ block body
 
                           td.text-upper.py-4 Persistenza
                           td.py-4
-                            ul(class='start list-unstyled start-'+prod.data.persistenza)
+                            ul(class='start list-unstyled start-'+prod.data.intensita)
                               li
                               li
                               li
                               li
                               li
-                        tr.text-left
-                          td
-                          td.testo-dorato
-                            != RichText.asText(prod.data.compatibile)
+
+
     -// Display the slices
       script(type='text/javascript').
         var cristal = `#{numero}`.toLowerCase();
