@@ -87,7 +87,70 @@ app.use(I18NUrl(), (req, res, next) => {
       next(`Error getting menu from prismic: ${error.message}`);
     });
 });
+function getCategoria(req, res, next) {
+  const uid = req.params.uid;
+  req.prismic.api
+    .getByUID("category", uid, I18NConfig(req))
+    .then(categoria => {
+      if (!categoria) {
+        res.status(404).send("page not found");
+      } else {
+        req.categoria = categoria;
+      }
 
+      next();
+    })
+    .catch(error => {
+      next(`error when retriving page ${error.message}`);
+    });
+}
+
+// fetch dei prodotti che hanno la categoria del parametro passato : uid
+// io prendo poi l'id del documento e lo vado a fetchare dal mio campo "collegamento a un documento"
+function getProdottoSimile(req, res, next) {
+  const id = req.categoria.id;
+  console.log("sioamo su prodotti simili\n");
+  console.log(id);
+  req.prismic.api
+    .query(
+      [
+        Prismic.Predicates.at("document.type", "prodotto"),
+
+        Prismic.Predicates.at("my.prodotto.categoria", id)
+      ],
+      I18NConfig(req)
+    )
+    .then(function(response) {
+      // response is the response object, response.results holds the documents
+      console.log(response.results);
+      req.prodottoFiglio = response.results;
+
+      next();
+    })
+    .catch(error => {
+      next("error " + error.message);
+    });
+}
+function renderCategoria(req, res) {
+  /*  req.prodottoFiglio.forEach(ele => {
+    ele.data.ingredienteAbdi.forEach(ele2 => {
+      console.log(ele.uid);
+      console.log(ele2);
+    });
+  }); */
+  res.render("categorie", {
+    title: "ladolcevia",
+    categoria: req.categoria.uid,
+    prodotto: req.prodottoFiglio
+  });
+}
+app.get(
+  I18NUrl("/categorie/:uid"),
+  getCategoria,
+  getProdottoSimile,
+
+  renderCategoria
+);
 //redirect / to default language from i18n.json
 app.get("/", (req, res, next) => {
   res.redirect(I18N.default);

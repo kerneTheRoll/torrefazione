@@ -20,6 +20,7 @@ module.exports = {
     if (doc.type == "servizi") return `/${doc.lang}/servizi`;
     if (doc.type == "contatti") return `/${doc.lang}/contatti`;
     if (doc.type == "storia") return `/${doc.lang}/storia`;
+    if (doc.type == "categorie") return `/${doc.lang}/categorie`;
     return "/";
   }
 };

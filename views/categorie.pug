@@ -1,0 +1,227 @@
+extends ./layout.pug
+
+block variables
+  - var nav_class = 'dark'
+
+
+block body
+
+  -// Content Section
+
+  .homepage(style='background:black;')
+
+    -// Homepage Banner Section
+    section.homepage-banner-2
+       .container.mt-5.pt-3
+          h2.testo-dorato.pr-5.mt-5.text-center.text-extra-bold Prodotti
+
+    div.container-fluid(style='position:relative;')
+
+      .arrow-left
+            i.fas.fa-arrow-circle-left
+              #testoPrevSlide
+      .arrow-right
+            i.fas.fa-arrow-circle-right
+              #testoNexSlide
+      #slideProdottiPagina
+
+            each prod in prodotto
+                .container-fluid.mt-5(style='background:black;color:#fff;')
+                  .contenitore-slide.box-background.pt-5
+
+                    h5.text-upper.testo-dorato.text-center #{categoria}
+
+
+                    h2.text-upper.testo-dorato.text-center.text-extra-bold
+                      !=RichText.asText(prod.data.title)
+                    h4.text-upper.testo-dorato.text-center.px-5 caffè in grani per macchina espresso
+                    div.container-fluid.pb-5
+                     img.immagine-prodotto.centered.wow.fadeInLeft(src=prod.data.image.url)
+                  .container(style='font-size:1.2em;')
+                    if categoria === 'capsule'
+                        .row
+                          .col-md-8
+                              p.px-md-5.py-xs-4.descri-testo.py-md-3.mt-4.capsule-header
+                                !=RichText.asText(prod.data.descrizione_prodotto)
+                                p.px-md-5.capsule-header
+                                        span.composizione.arancone-testo.text-extra-bold.text-upper
+                                          !=RichText.asText(prod.data.composizione)
+
+
+                                p.px-md-5.capsule-header
+                                    span.imballagio-capsule
+                                            != RichText.asText(prod.data.imballaggio)
+                          .col-md-4
+                              img.imageCapsule(src=prod.data.image2.url)
+
+                    else
+                              p.px-md-5.py-xs-4.descri-testo.py-md-3.mt-4.text-justify(style='width:80%;margin:10px auto')
+                                      !=RichText.asText(prod.data.descrizione_prodotto)
+                              p.px-md-5.py-xs-4.descri-testo.text-center
+                                        span.composizione.arancone-testo.text-extra-bold.text-upper
+                                          !=RichText.asText(prod.data.composizione)
+                                        span.px-2.composizione-descrizione
+                                          !=RichText.asText(prod.data.testo_composizione)
+                              p.px-md-5.py-xs-4.descri-testo.text-center
+                                        span.composizione.arancone-testo.text-extra-bold.text-upper
+                                          !=RichText.asText(prod.data.titolo_origine)
+                                        span.px-2.composizione-descrizione
+                                          !=RichText.asText(prod.data.testo_orgine)
+                              p.px-md-5.py-xs-4.descri-testo.text-center
+                                        span.imballaggio.text-extra-bold.text-upper.arancone-testo
+                                            != RichText.asText(prod.data.imballaggio)
+
+                    div(class=(categoria === 'capsule')? 'container-table' : '')
+                        table.table
+
+                          tbody.tabella-prodotti
+                            tr.tostatura
+
+                              td.text-upper.text-center.align-middle.skil-prod Tostatura
+                              td.testo-dorato.text-upper.text-bold.align-middle.skil-prod Media
+
+
+
+
+                            tr(style='padding-bottom:100px')
+
+                              td.py-3.text-upper.align-middle.text-center.skil-prod Intensità
+                              td.py-3.align-middle
+                                ul(class='start list-unstyled start-'+prod.data.intensita)
+                                  li
+                                  li
+                                  li
+                                  li
+                                  li
+                            tr
+
+                              td.text-upper.align-middle.text-center.skil-prod Aroma
+                              td.align-middle
+                                ul(class='start list-unstyled start-'+prod.data.intensita)
+                                  li
+                                  li
+                                  li
+                                  li
+                                  li
+                            tr
+
+                              td.text-upper.align-middle.text-center.skil-prod Corpo
+                              td.align-middle
+                                ul(class='start list-unstyled start-'+prod.data.intensita)
+                                  li
+                                  li
+                                  li
+                                  li
+                                  li
+                            tr
+
+                              td.text-upper.py-4.text-center.skil-prod Persistenza
+                              td.py-4
+                                ul(class='start list-unstyled start-'+prod.data.persistenza)
+                                  li
+                                  li
+                                  li
+                                  li
+                                  li
+                            tr
+                              td
+                              td.testo-dorato.skil-prod
+                                != RichText.asText(prod.data.compatibile)
+    -// Display the slices
+      script(type='text/javascript').
+        var cristal = `#{numero}`.toLowerCase();
+        var stringaPulita = cristal.substring(0,cristal.indexOf('-'))
+        var cerca = (stringaPulita.length > 0) ? stringaPulita.toLowerCase() : cristal
+        console.log(cristal)
+        console.log('sotto troviamo il risultato della stringa')
+        console.log(cerca)
+        function trovaNome(){
+            $('.contenitore-slide').each(function(index,elem){
+                var text = $.trim($('h2',elem).text());
+                if ( text.toLowerCase()=== cerca.toLowerCase()){
+                    slide.goToSlide(index);
+                    return (index )
+                }else{
+                    console.log('non trovato '+' passato testo '+cristal + 'confrontato con '+text)
+                }
+            })
+        }
+
+        function trovaNomeProssimaSlide(indice,el){
+            if(el.getTotalSlideCount()===1) return;
+            $('.contenitore-slide').each(function(i,elem){
+              console.log('indice uguale = ' +i)
+
+              if(i === indice){
+                 var text = $.trim($('h2',elem).text());
+                 console.log('prossimo titolo prodotto  slide è ' +text)
+                 $('#testoNexSlide').html(text)
+              }
+            })
+        }
+            function trovaNomePrecedenteSlide(indice){
+            $('.contenitore-slide').each(function(i,elem){
+              console.log('indice uguale = ' +i)
+              if(i === indice){
+                 var text = $.trim($('h2',elem).text());
+                 console.log('prossimo titolo prodotto  slide è ' +text)
+                 $('#testoPrevSlide').html(text)
+              }
+            })
+        }
+
+
+        var slide = $("#slideProdottiPagina").lightSlider({
+          item: 1,
+          slideMove: 1,
+          slideMargin: 0,
+
+          enableDrag: false,
+          pager: false,
+          controls: false,
+          onSliderLoad: function(el){
+              if(el.getTotalSlideCount()=== 1){
+                    $('.arrow-left').addClass('hide');
+                      $('.arrow-right').addClass('hide');
+
+              }
+          },
+           onBeforeSlide:function(el){
+
+
+
+            if (el.getCurrentSlideCount() === 1 ){
+
+               $('.arrow-left').addClass('hide')
+
+               trovaNomeProssimaSlide(el.getCurrentSlideCount(),el);
+
+            }
+
+
+
+            else if(el.getCurrentSlideCount() == el.getTotalSlideCount()){
+
+               $('.arrow-right').addClass('hide');
+                trovaNomeProssimaSlide(el.getCurrentSlideCount(),el);
+                trovaNomePrecedenteSlide(el.getCurrentSlideCount()-2)
+            }
+            else{
+                trovaNomeProssimaSlide(el.getCurrentSlideCount(),el);
+                 trovaNomePrecedenteSlide(el.getCurrentSlideCount()-2)
+                  $('.arrow-right').removeClass('hide');
+                     $('.arrow-left').removeClass('hide')
+            }
+          }
+        });
+        trovaNome();
+        $('.arrow-left').click(function(){
+           slide.goToPrevSlide();
+           return false;
+        })
+         $('.arrow-right').click(function(){
+           slide.goToNextSlide();
+           return false;
+        })
+
+
