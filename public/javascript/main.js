@@ -80,6 +80,10 @@ $(document).ready(function() {
     pager: false,
 
     addClass: "center-thumbs",
+    prevHtml:
+      '<span class="custom-prev"><img src="../images/next.png"  style="transform:rotate(-180deg)"/></span>',
+    nextHtml:
+      '<span class="custom-prev"><img src="../images/next.png" /></span>',
     responsive: [
       {
         breakpoint: 767,
@@ -115,9 +119,9 @@ $(document).ready(function() {
     setProfile(profile);
     window.location.reload();
   });
-  $(".sidebarBtn").click(function() {
-    $(".sidebar").toggleClass("active");
-    $(".sidebarBtn").toggleClass("toggle");
+  $("button.sidebarBtn").click(function() {
+    $("div.sidebar").toggleClass("active");
+    $(this).toggleClass("toggle");
     //$(".homepage-banner").toggleClass("offMargin");
     $(".animation-menu a,.animation-menu").toggleClass("animated  fadeInLeft");
 

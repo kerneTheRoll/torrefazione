@@ -12,7 +12,7 @@ function I18NUrl(urlPart) {
   return `/:lang(${I18N.languages.map(l => l.key).join("|")})${urlPart || ""}`;
 }
 
-function saluta(){}
+function saluta() {}
 
 function I18NConfig(req, options) {
   return Object.assign(options || {}, { lang: req.params.lang });
@@ -33,6 +33,7 @@ app.use((req, res, next) => {
   res.locals.RichText = RichText;
   //put Link helper from Prismic DOM to simplify getting url from link
   res.locals.Link = Link;
+  res.locals.active = "";
 
   Prismic.api(config.apiEndpoint, {
     accessToken: config.accessToken,
@@ -74,6 +75,7 @@ app.use(I18NUrl(), (req, res, next) => {
         .then(function(response) {
           res.locals.categ = response.results;
           res.locals.menu = menu;
+          console.log(menu);
 
           next();
         })
@@ -112,7 +114,8 @@ app.get(I18NUrl("/"), (req, res, next) => {
 
           res.render("homepage", {
             home: home,
-            prodotto: response.results
+            prodotto: response.results,
+            title: "homepage"
           });
         });
     })
@@ -124,8 +127,7 @@ app.get(I18NUrl("/servizi"), (req, res, next) => {
   req.prismic.api
     .getSingle("servizi", I18NConfig(req))
     .then(servizio => {
-      console.log(servizio);
-      res.render("Servizi", { servizio: servizio });
+      res.render("Servizi", { servizio: servizio, title: "servizi" });
     })
     .catch(error => {
       next(`error when retriving homepage ${error.message}`);
@@ -135,7 +137,7 @@ app.get(I18NUrl("/storia"), (req, res, next) => {
   req.prismic.api
     .getSingle("storia", I18NConfig(req))
     .then(storia => {
-      res.render("storia", { storia: storia });
+      res.render("storia", { storia: storia, title: "storia" });
     })
     .catch(error => {
       next(`error when retriving homepage ${error.message}`);
@@ -145,7 +147,11 @@ app.get(I18NUrl("/contatti"), (req, res, next) => {
   req.prismic.api
     .getSingle("contatti", I18NConfig(req))
     .then(contatti => {
-      res.render("contatti", { contatti: contatti, color: "bianco" });
+      res.render("contatti", {
+        contatti: contatti,
+        color: "bianco",
+        title: "contatti"
+      });
     })
     .catch(error => {
       next(`error when retriving homepage ${error.message}`);
@@ -178,9 +184,8 @@ app.get(I18NUrl("/prodotto/:uid"), (req, res, next) => {
       })
 
       .then(function(response) {
-        
         // response is the response object, response.results holds the documents
-        
+
         rispostaFiltrata = response.results.filter(elemento => {
           return elemento.data.categoria.uid === req.categoriaScelta;
         });
@@ -192,7 +197,8 @@ app.get(I18NUrl("/prodotto/:uid"), (req, res, next) => {
         res.render("prodotto", {
           prodotto: rispostaFiltrata,
           numero: uid,
-          categoria: req.categoriaScelta
+          categoria: req.categoriaScelta,
+          title: "prodotto"
         });
       });
   });

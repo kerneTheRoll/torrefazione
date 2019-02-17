@@ -256,8 +256,9 @@ descrizione-servizio {
   font-weight: bold;
 }
 
-.text-bold {
-  font-weight: 800;
+a.text-bold {
+  font-weight: bold;
+  ;
 }
 
 .descrizione-collaborazione {
@@ -309,10 +310,12 @@ div.card-footer {
   padding: 5px;
 }
 
+
+
 .lista-categorie li {
   font-size: 14px;
   border-bottom: 0;
-
+  text-transform: capitalize;
 }
 
 html {
@@ -324,11 +327,15 @@ html {
   margin-right: 10px;
 }
 
+.lista-categorie {
+  margin-top: -35px;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: mont-normal-text;
-
+  position: relative;
 
 }
 
@@ -370,6 +377,7 @@ h2.card-title {
 h5.text-upper.testo-dorato-su-bianco {
   font-size: 3em;
 }
+
 
 
 .centered {
@@ -570,6 +578,17 @@ h5.testo-dorato-su-bianco {
 
 }
 
+table.table {
+
+  max-width: 60%;
+  margin: 10px auto
+}
+
+.capsule-header {
+  width: 80%;
+  margin: 0px auto
+}
+
 .text-extra-bold {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
@@ -612,7 +631,7 @@ div.logo {
 }
 
 .sidebar ul li {
-  margin: 15px 0;
+  margin: 14px 0;
 
 
 }
@@ -623,7 +642,7 @@ div.logo {
   color: #333;
 
   font-size: 1.8em;
-  font-weight: 400;
+
   display: block;
   text-decoration: none;
 
@@ -653,14 +672,14 @@ div.logo {
   cursor: pointer;
   border: none;
   background: transparent;
-  outline: none;
+
 
 
 
 }
 
 .sidebarBtn:focus {
-  display: none;
+  outline: none;
 }
 
 
@@ -689,6 +708,7 @@ div.logo {
   top: -10;
   width: 100%;
   transition: .3s;
+  z-index: 1000;
 }
 
 span.icon:hover {
@@ -707,6 +727,7 @@ span.icon:hover {
   top: 10;
   width: 100%;
   transition: .3s;
+
 }
 
 .sidebarBtn.toggle span {
@@ -716,11 +737,13 @@ span.icon:hover {
 .sidebarBtn.toggle span:before {
   top: 0;
   transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
 }
 
 .sidebarBtn.toggle span:after {
   top: 0;
   transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
 }
 
 .site-header {
@@ -892,6 +915,17 @@ a.ban {
   font-size: .8em;
   width: 220px;
   margin: 50px auto;
+  font-family: mont-normal-text
+}
+
+.imballagio-capsule {
+  border-top: 2px solid #886833;
+  border-bottom: 2px solid #886833;
+
+  display: block;
+  font-size: 1.2em;
+  width: 250px;
+  margin-top: 20px;
   font-family: mont-normal-text
 }
 
@@ -2097,6 +2131,11 @@ div.footer {
   flex-direction: column;
 }
 
+.container-table {
+  height: 900px;
+}
+
+
 @media screen and (max-width:420px) {
   .homepage-banner .banner-content .banner-title {
     font-size: 30px;
@@ -2107,6 +2146,168 @@ div.footer {
     right: 50px;
     margin-top: 80px;
 
+  }
+
+  .imballagio-capsule {
+    border-top: 2px solid #886833;
+    border-bottom: 2px solid #886833;
+
+    display: block;
+    font-size: 1.2em;
+    width: auto;
+    margin-top: 20px;
+    font-family: mont-normal-text
+  }
+
+  .capsule-header {
+    width: 100%;
+    margin: 0px auto
+  }
+
+
+  table.table {
+    min-height: content;
+    max-width: 100%;
+    margin: 10px auto;
+
+
+  }
+
+
+  .skil-prod {
+    font-size: 13px;
+  }
+
+  .start-1 li:nth-of-type(1) {
+    background-image: url('../images/CHICCO_PIENO.png');
+    width: 16px;
+    ;
+    line-height: 16px;
+    ;
+    height: 16px;
+    ;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+  .start-1 li:nth-of-type(2),
+  .start-1 li:nth-of-type(3),
+  .start-1 li:nth-of-type(4),
+  .start-1 li:nth-of-type(5) {
+    background-image: url('../images/CHICCO_VUOTO.png');
+    width: 16px;
+    ;
+    line-height: 16px;
+    ;
+    height: 16px;
+    ;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .start-2 li:nth-of-type(1),
+  .start-2 li:nth-of-type(2) {
+    background-image: url('../images/CHICCO_PIENO.png');
+    width: 16px;
+    ;
+    line-height: 16px;
+    ;
+    height: 16px;
+    ;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .start-2 li:nth-of-type(3),
+  .start-2 li:nth-of-type(4),
+  .start-2 li:nth-of-type(5) {
+    background-image: url('../images/CHICCO_VUOTO.png');
+    width: 16px;
+    ;
+    line-height: 16px;
+    ;
+    height: 16px;
+    ;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+
+
+  .start-3 li:nth-of-type(1),
+  .start-3 li:nth-of-type(2),
+  .start-3 li:nth-of-type(3) {
+    background-image: url('../images/CHICCO_PIENO.png');
+    width: 16px;
+    ;
+    line-height: 16px;
+    ;
+    height: 16px;
+    ;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .start-3 li:nth-of-type(4),
+  .start-3 li:nth-of-type(5) {
+    background-image: url('../images/CHICCO_VUOTO.png');
+    width: 16px;
+    ;
+    line-height: 16px;
+    ;
+    height: 16px;
+    ;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .start-4 li:nth-of-type(1),
+  .start-4 li:nth-of-type(2),
+  .start-4 li:nth-of-type(3),
+  .start-4 li:nth-of-type(4) {
+    background-image: url('../images/CHICCO_PIENO.png');
+    width: 16px;
+    ;
+    line-height: 16px;
+    ;
+    height: 16px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .start-4 li:nth-of-type(5) {
+    background-image: url('../images/CHICCO_VUOTO.png');
+    width: 16px;
+    line-height: 16px;
+    ;
+    height: 16px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .start-5 li:nth-of-type(1),
+  .start-5 li:nth-of-type(2),
+  .start-5 li:nth-of-type(3),
+  .start-5 li:nth-of-type(4),
+  .start-5 li:nth-of-type(5) {
+    background-image: url('../images/CHICCO_PIENO.png');
+    width: 16px;
+    line-height: 16px;
+    ;
+    height: 16px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .banner-content.banner-content-storia h2 {
@@ -2129,6 +2330,7 @@ div.footer {
 
   .sidebar {
     display: flex;
+    display: -moz-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -2144,6 +2346,7 @@ div.footer {
     padding: 0;
 
     display: flex;
+    display: -moz-flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;

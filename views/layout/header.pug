@@ -6,16 +6,18 @@ header#header
 
 
       ul.menu-list
+
+
         li.animation-menu
-          a(href=Link.url(menu.data.linkhome, ctx.linkResolver))
+          a(href=Link.url(menu.data.linkhome, ctx.linkResolver),class= (title  === menu.data.linkhome.type) ? 'text-bold ': '')
             != RichText.asText(menu.data.home)
         li.animation-menu
-         a(href=Link.url(menu.data.linkazienda, ctx.linkResolver))
+         a(href=Link.url(menu.data.linkazienda, ctx.linkResolver),class= (title  === menu.data.linkazienda.type) ? 'text-bold ': '')
             != RichText.asText(menu.data.azienda)
 
         li.wrapper-categoria
-          div.categorie.pb-3
-            h4.text-extra-bold.mt-2.animation-menu
+          div.categorie.pb-3.mt-5
+            h5.text-upper.mt-2.animation-menu
               != RichText.asText(menu.data.i_nostri_prodott)
             ul.lista-categorie
                 li.animation-menu
@@ -24,14 +26,18 @@ header#header
 
 
         li.animation-menu
-          a(href=Link.url(menu.data.linkcontatti, ctx.linkResolver))
+          a(href=Link.url(menu.data.linkcontatti, ctx.linkResolver), class= (title ===menu.data.linkcontatti.type) ? 'text-bold ': '')
             != RichText.asText(menu.data.contatti)
+
         li.animation-menu
-           a(href=Link.url(menu.data.linkservizi, ctx.linkResolver))
+           a(href=Link.url(menu.data.linkservizi, ctx.linkResolver),class= (title === menu.data.linkservizi.type) ? 'text-bold ': '')
             != RichText.asText(menu.data.servizi)
 
 
-      button.sidebarBtn(type='button')
+
+
+
+      button.sidebarBtn(type='button' id='sidebarbtn')
         span
 
 
@@ -53,3 +59,5 @@ header#header
             include ./language-selector
   .logo-container
          img(src=menu.data.logo_brand.url width='100px')
+
+
