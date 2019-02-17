@@ -14,8 +14,14 @@
 
 
 @font-face {
-  font-family: mont-normal-text;
+  font-family: mont-normal-italic;
   src: url('./Fonts/Montserrat-Italic.ttf');
+
+}
+
+@font-face {
+  font-family: mont-normal-text;
+  src: url('./Fonts/Montserrat-Regular.ttf');
 
 }
 
@@ -60,6 +66,15 @@
 
 }
 
+div.col-md-4.card.card-storia {
+  padding-left: 70px;
+  padding-right: 70px;
+  background-image: url('../images/backCard.jpg');
+
+
+
+}
+
 .banner-section-site {
 
 
@@ -93,6 +108,12 @@ div.card {
 
 }
 
+a.text-dorato:hover {
+  text-decoration: none;
+  color: orange;
+
+}
+
 /****+ stile per stelline a forma di chicchi */
 
 .start {
@@ -102,9 +123,9 @@ div.card {
 
 .start-1 li:nth-of-type(1) {
   background-image: url('../images/CHICCO_PIENO.png');
-  width: 20px;
+  width: 40px;
   line-height: 20px;
-  height: 20px;
+  height: 40px;
   display: inline-block;
   background-repeat: no-repeat;
   background-size: cover;
@@ -115,9 +136,9 @@ div.card {
 .start-1 li:nth-of-type(4),
 .start-1 li:nth-of-type(5) {
   background-image: url('../images/CHICCO_VUOTO.png');
-  width: 20px;
+  width: 40px;
   line-height: 20px;
-  height: 20px;
+  height: 40px;
   display: inline-block;
   background-repeat: no-repeat;
   background-size: cover;
@@ -126,9 +147,9 @@ div.card {
 .start-2 li:nth-of-type(1),
 .start-2 li:nth-of-type(2) {
   background-image: url('../images/CHICCO_PIENO.png');
-  width: 20px;
+  width: 40px;
   line-height: 20px;
-  height: 20px;
+  height: 40px;
   display: inline-block;
   background-repeat: no-repeat;
   background-size: cover;
@@ -138,22 +159,24 @@ div.card {
 .start-2 li:nth-of-type(4),
 .start-2 li:nth-of-type(5) {
   background-image: url('../images/CHICCO_VUOTO.png');
-  width: 20px;
+  width: 40px;
   line-height: 20px;
-  height: 20px;
+  height: 40px;
   display: inline-block;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 
+
+
 .start-3 li:nth-of-type(1),
 .start-3 li:nth-of-type(2),
 .start-3 li:nth-of-type(3) {
   background-image: url('../images/CHICCO_PIENO.png');
-  width: 20px;
+  width: 40px;
   line-height: 20px;
-  height: 20px;
+  height: 40px;
   display: inline-block;
   background-repeat: no-repeat;
   background-size: cover;
@@ -162,9 +185,9 @@ div.card {
 .start-3 li:nth-of-type(4),
 .start-3 li:nth-of-type(5) {
   background-image: url('../images/CHICCO_VUOTO.png');
-  width: 20px;
+  width: 40px;
   line-height: 20px;
-  height: 20px;
+  height: 40px;
   display: inline-block;
   background-repeat: no-repeat;
   background-size: cover;
@@ -175,9 +198,9 @@ div.card {
 .start-4 li:nth-of-type(3),
 .start-4 li:nth-of-type(4) {
   background-image: url('../images/CHICCO_PIENO.png');
-  width: 20px;
+  width: 40px;
   line-height: 20px;
-  height: 20px;
+  height: 40px;
   display: inline-block;
   background-repeat: no-repeat;
   background-size: cover;
@@ -185,9 +208,9 @@ div.card {
 
 .start-4 li:nth-of-type(5) {
   background-image: url('../images/CHICCO_VUOTO.png');
-  width: 20px;
+  width: 40px;
   line-height: 20px;
-  height: 20px;
+  height: 40px;
   display: inline-block;
   background-repeat: no-repeat;
   background-size: cover;
@@ -199,16 +222,19 @@ div.card {
 .start-5 li:nth-of-type(4),
 .start-5 li:nth-of-type(5) {
   background-image: url('../images/CHICCO_PIENO.png');
-  width: 20px;
+  width: 40px;
   line-height: 20px;
-  height: 20px;
+  height: 40px;
   display: inline-block;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 
-
+.immagine-prodotto {
+  max-width: 500px;
+  display: block;
+}
 
 /**** fine stile per rating a forma di stelline ***/
 .titolo-collaborazione {
@@ -217,6 +243,17 @@ div.card {
 
 .text-bianco {
   color: #fff;
+}
+
+.desc-attiv,
+descrizione-servizio {
+  font-size: 1.2em;
+}
+
+.sottotit {
+  font-weight: bold;
+  font-family: mont-normal-text;
+  font-weight: bold;
 }
 
 .text-bold {
@@ -235,8 +272,9 @@ div.card {
   transform: rotate(90deg);
 }
 
-.text-white {
+.text-white2 {
   color: #fff;
+  font-size: 1.2em;
 }
 
 .marker-icon {
@@ -811,7 +849,7 @@ a.ban {
 
 .arrow-left,
 .arrow-right {
-  color: orange;
+  color: #886833;
   position: absolute;
 
   font-size: 2em;
@@ -843,7 +881,18 @@ a.ban {
 
   width: 300px;
   margin: 50px auto;
+}
 
+.imballaggio {
+
+  border-top: 2px solid #886833;
+  border-bottom: 2px solid #886833;
+
+  display: block;
+  font-size: .8em;
+  width: 220px;
+  margin: 50px auto;
+  font-family: mont-normal-text
 }
 
 .servizi-image {
@@ -883,13 +932,13 @@ a.ban {
 }
 
 .arrow-left {
-  left: 25px;
+  left: 35px;
   top: 25%;
 
 }
 
 .arrow-right {
-  right: 10px;
+  right: 35px;
   top: 25%;
 
 }
@@ -980,19 +1029,20 @@ a.ban {
 
 #testoNexSlide {
   text-align: center;
-  font-size: 1em;
+  font-size: .7em;
   position: relative;
   right: 50px;
   padding-top: 5px;
   font-weight: normal;
+  font-family: mont-normal-text
 }
 
 #testoPrevSlide {
   text-align: center;
-  font-size: 1em;
+  font-size: .7em;
   padding-top: 5px;
   font-weight: normal;
-
+  font-family: mont-normal-text
 }
 
 .homepage-banner .banner-content .banner-button {
@@ -1052,10 +1102,20 @@ div.modal div.modal-backdrop {
   z-index: 0;
 }
 
+.imageCapsule {
+  display: block;
+  width: 200px;
+  margin: 10px auto;
+}
+
 @media (max-width: 767px) {
   h1 {
     font-size: 32px;
     line-height: 40px;
+  }
+
+  .immagine-prodotto {
+    max-width: 100%
   }
 
   #exampleModal {
@@ -1087,6 +1147,117 @@ div.modal div.modal-backdrop {
   h3 {
     font-size: 18px;
   }
+
+  .start-1 li:nth-of-type(1) {
+    background-image: url('../images/CHICCO_PIENO.png');
+    width: 20px;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+  .start-1 li:nth-of-type(2),
+  .start-1 li:nth-of-type(3),
+  .start-1 li:nth-of-type(4),
+  .start-1 li:nth-of-type(5) {
+    background-image: url('../images/CHICCO_VUOTO.png');
+    width: 20px;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .start-2 li:nth-of-type(1),
+  .start-2 li:nth-of-type(2) {
+    background-image: url('../images/CHICCO_PIENO.png');
+    width: 20px;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .start-2 li:nth-of-type(3),
+  .start-2 li:nth-of-type(4),
+  .start-2 li:nth-of-type(5) {
+    background-image: url('../images/CHICCO_VUOTO.png');
+    width: 20px;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+
+
+  .start-3 li:nth-of-type(1),
+  .start-3 li:nth-of-type(2),
+  .start-3 li:nth-of-type(3) {
+    background-image: url('../images/CHICCO_PIENO.png');
+    width: 20px;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .start-3 li:nth-of-type(4),
+  .start-3 li:nth-of-type(5) {
+    background-image: url('../images/CHICCO_VUOTO.png');
+    width: 20px;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .start-4 li:nth-of-type(1),
+  .start-4 li:nth-of-type(2),
+  .start-4 li:nth-of-type(3),
+  .start-4 li:nth-of-type(4) {
+    background-image: url('../images/CHICCO_PIENO.png');
+    width: 20px;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .start-4 li:nth-of-type(5) {
+    background-image: url('../images/CHICCO_VUOTO.png');
+    width: 20px;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .start-5 li:nth-of-type(1),
+  .start-5 li:nth-of-type(2),
+  .start-5 li:nth-of-type(3),
+  .start-5 li:nth-of-type(4),
+  .start-5 li:nth-of-type(5) {
+    background-image: url('../images/CHICCO_PIENO.png');
+    width: 20px;
+    line-height: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
 }
 
 footer {
