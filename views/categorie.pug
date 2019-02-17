@@ -13,7 +13,7 @@ block body
     -// Homepage Banner Section
     section.homepage-banner-2
        .container.mt-5.pt-3
-          h2.testo-dorato.pr-5.mt-5.text-center.text-extra-bold Prodotti
+          h2.testo-dorato.pr-5.mt-5.text-center.text-extra-bold #{title}
 
     div.container-fluid(style='position:relative;')
 
@@ -34,7 +34,8 @@ block body
 
                     h2.text-upper.testo-dorato.text-center.text-extra-bold
                       !=RichText.asText(prod.data.title)
-                    h4.text-upper.testo-dorato.text-center.px-5 caffè in grani per macchina espresso
+                    h4.text-upper.testo-dorato.text-center.px-5
+                       != RichText.asText(prod.data.sottocateg)
                     div.container-fluid.pb-5
                      img.immagine-prodotto.centered.wow.fadeInLeft(src=prod.data.image.url)
                   .container(style='font-size:1.2em;')
@@ -77,15 +78,18 @@ block body
                           tbody.tabella-prodotti
                             tr.tostatura
 
-                              td.text-upper.text-center.align-middle.skil-prod Tostatura
-                              td.testo-dorato.text-upper.text-bold.align-middle.skil-prod Media
+                              td.text-upper.text-center.align-middle.skil-prod
+                                != RichText.asText(prod.data.tostatura)
+                              td.testo-dorato.text-upper.text-bold.align-middle.skil-prod
+                                != RichText.asText(prod.data.livello_tostatura)
 
 
 
 
                             tr(style='padding-bottom:100px')
 
-                              td.py-3.text-upper.align-middle.text-center.skil-prod Intensità
+                              td.py-3.text-upper.align-middle.text-center.skil-prod
+                                  != RichText.asText(prod.data.intensita_titolo)
                               td.py-3.align-middle
                                 ul(class='start list-unstyled start-'+prod.data.intensita)
                                   li
@@ -95,9 +99,10 @@ block body
                                   li
                             tr
 
-                              td.text-upper.align-middle.text-center.skil-prod Aroma
+                              td.text-upper.align-middle.text-center.skil-prod
+                                  != RichText.asText(prod.data.aroma_titolo)
                               td.align-middle
-                                ul(class='start list-unstyled start-'+prod.data.intensita)
+                                ul(class='start list-unstyled start-'+prod.data.aroma)
                                   li
                                   li
                                   li
@@ -105,9 +110,10 @@ block body
                                   li
                             tr
 
-                              td.text-upper.align-middle.text-center.skil-prod Corpo
+                              td.text-upper.align-middle.text-center.skil-prod
+                                  != RichText.asText(prod.data.corpo_titolo)
                               td.align-middle
-                                ul(class='start list-unstyled start-'+prod.data.intensita)
+                                ul(class='start list-unstyled start-'+prod.data.corpo)
                                   li
                                   li
                                   li
@@ -115,7 +121,8 @@ block body
                                   li
                             tr
 
-                              td.text-upper.py-4.text-center.skil-prod Persistenza
+                              td.text-upper.py-4.text-center.skil-prod
+                                  != RichText.asText(prod.data.persistenza_titolo)
                               td.py-4
                                 ul(class='start list-unstyled start-'+prod.data.persistenza)
                                   li

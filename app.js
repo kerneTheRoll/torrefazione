@@ -139,7 +139,7 @@ function renderCategoria(req, res) {
     });
   }); */
   res.render("categorie", {
-    title: "ladolcevia",
+    title: "Categorie",
     categoria: req.categoria.uid,
     prodotto: req.prodottoFiglio
   });
