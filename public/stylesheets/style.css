@@ -804,6 +804,14 @@ span.icon:hover {
     text-align: center;
   }
 
+
+
+
+
+  .container-table table {
+    width: 500px;
+  }
+
   .container-element {
     display: block;
   }
@@ -996,7 +1004,7 @@ a.ban {
 
   position: absolute;
   left: 50%;
-  top: 4%;
+  top: 2%;
   transform: translate(-50%, -50%);
   z-index: 1;
 }
@@ -1991,6 +1999,10 @@ footer a {
     height: auto;
   }
 
+  .container-table table {
+    width: 80%;
+  }
+
   .site-header .logo {
     display: block;
     text-align: center;
@@ -2134,8 +2146,21 @@ div.footer {
 
 .container-table {
   height: 900px;
+  margin-top: 50px;
+  width: 100%;
 }
 
+
+
+.container-table table tr {
+  text-align: center;
+}
+
+@media screen and (min-width: 767px) {
+  .container-table table {
+    width: 900px;
+  }
+}
 
 @media screen and (max-width:420px) {
   .homepage-banner .banner-content .banner-title {
@@ -2148,6 +2173,8 @@ div.footer {
     margin-top: 80px;
 
   }
+
+
 
   .imballagio-capsule {
     border-top: 2px solid #886833;
@@ -2423,6 +2450,10 @@ div.footer {
   .logo-container img {
     width: 80px;
     margin-left: 50px;
+  }
+
+  .logo-container {
+    top: .4%;
   }
 
   .container-background {

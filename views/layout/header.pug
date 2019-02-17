@@ -26,12 +26,12 @@ header#header
 
 
         li.animation-menu
+           a(href=Link.url(menu.data.linkservizi, ctx.linkResolver),class= (title === menu.data.linkservizi.type) ? 'text-bold ': '')
+            != RichText.asText(menu.data.servizi)
+        li.animation-menu
           a(href=Link.url(menu.data.linkcontatti, ctx.linkResolver), class= (title ===menu.data.linkcontatti.type) ? 'text-bold ': '')
             != RichText.asText(menu.data.contatti)
 
-        li.animation-menu
-           a(href=Link.url(menu.data.linkservizi, ctx.linkResolver),class= (title === menu.data.linkservizi.type) ? 'text-bold ': '')
-            != RichText.asText(menu.data.servizi)
 
 
 

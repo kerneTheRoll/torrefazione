@@ -178,7 +178,7 @@ app.get(I18NUrl("/"), (req, res, next) => {
           res.render("homepage", {
             home: home,
             prodotto: response.results,
-            title: "homepage"
+            title: "LatorrefazioneDelConte"
           });
         });
     })

@@ -40,7 +40,7 @@ block body
                      img.immagine-prodotto.centered.wow.fadeInLeft(src=prod.data.image.url)
                   .container(style='font-size:1.2em;')
                     if categoria === 'capsule'
-                        .row
+                        .row.mt-5
                           .col-md-8
                               p.px-md-5.py-xs-4.descri-testo.py-md-3.mt-4.capsule-header
                                 !=RichText.asText(prod.data.descrizione_prodotto)
