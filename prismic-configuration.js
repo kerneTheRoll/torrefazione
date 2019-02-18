@@ -16,11 +16,11 @@ module.exports = {
     if (doc.type == "prodotto") return `/${doc.lang}/prodotto/${doc.uid}`;
     if (doc.type == "homepage") return `/${doc.lang}`;
     if (doc.type == "azienda") return `/${doc.lang}/azienda`;
-    if (doc.type == "prodotti") return `/${doc.lang}/prodotti`;
+
     if (doc.type == "servizi") return `/${doc.lang}/servizi`;
     if (doc.type == "contatti") return `/${doc.lang}/contatti`;
     if (doc.type == "storia") return `/${doc.lang}/storia`;
-    if (doc.type == "categorie") return `/${doc.lang}/categorie`;
+    if (doc.type == "category") return `/${doc.lang}/categorie/${doc.uid}`;
     return "/";
   }
 };

@@ -20,9 +20,11 @@ header#header
             h5.text-upper.mt-2.animation-menu
               != RichText.asText(menu.data.i_nostri_prodott)
             ul.lista-categorie
+               each linkItem in menu.data.menu_links
                 li.animation-menu
-                   each element in categ
-                      a(href='/'+element.lang+'/'+'categorie/'+element.uid) #{element.uid}
+                  a(href=Link.url(linkItem.link, ctx.linkResolver))
+                    != RichText.asText(linkItem.label_link)
+
 
 
         li.animation-menu
@@ -60,6 +62,7 @@ header#header
   .logo-container
          img(src=menu.data.logo_brand.url width='100px')
   .container-language
+    //
      for lang in I18N.languages
         - var selected = lang.key === I18N.current ? true : false;
         - var alternateDocLink = activeDoc.alternate_languages.find(al => al.lang === lang.key);

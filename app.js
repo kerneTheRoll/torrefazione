@@ -141,7 +141,7 @@ function renderCategoria(req, res) {
   res.render("categorie", {
     title: "Categorie",
     categoria: req.categoria.uid,
-    prodotto: req.prodottoFiglio
+    categorie: req.prodottoFiglio
   });
 }
 app.get(

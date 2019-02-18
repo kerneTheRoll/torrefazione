@@ -2,7 +2,7 @@ extends ./layout.pug
 
 block variables
   - var nav_class = 'dark'
-
+   - var activeDoc = categorie
 
 block body
 
@@ -25,7 +25,7 @@ block body
               #testoNexSlide
       #slideProdottiPagina
 
-            each prod in prodotto
+            each prod in categorie
                 .container-fluid.mt-5(style='background:black;color:#fff;')
                   .contenitore-slide.box-background.pt-5
 
