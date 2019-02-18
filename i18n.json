@@ -6,11 +6,8 @@
     {
       "key": "en-gb",
       "label": "English"
-    },
-    {
-      "key": "de-de",
-      "label": "German"
     }
+
   ],
   "default": "it-it"
 }

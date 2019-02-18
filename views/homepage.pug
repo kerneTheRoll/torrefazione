@@ -84,7 +84,9 @@ block body
               != RichText.asText(home.data.titolo_gruppo)
             p
               != RichText.asText(home.data.descrizione_gruppo)
-
+            .card-footer
+              a.float-right.icon(href=ctx.linkResolver(home.data.link_prodotto))
+                i.far.fa-arrow-alt-circle-right.text-dorato
           .col-md-4.card.card-storia
             h2.card-title.text-center.text-center.text-dorato.font-ultra-bold
               != RichText.asText(home.data.i_valori)
@@ -114,7 +116,7 @@ block body
 
     .container-fluid.mt-5.mb-5
               .container.immagine-collaborazione.mb-5
-                h2.testo-dorato.text-upper.text-bold.titolo-collaborazione
+                h2.text-dorato.text-upper.text-extra-bold.titolo-collaborazione
                   !=RichText.asText(home.data.titolo_collaborazione)
                 p.text-bianco.descrizione-collaborazione.text-upper
                   !=RichText.asText(home.data.descrizione_collaborazione)

@@ -1,28 +1,46 @@
 extends ./layout.pug
 
 block variables
-  - var nav_class = 'dark'
-  - var activeDoc = contatti
-  - var tablet = contatti.data.cover_contatti.url
-
+  - var nav_class = 'dark';
+  - var activeDoc = contatti;
+  - var tablet = contatti.data.cover_contatti.url;
+  - var cover = contatti.data.cover_contatti1.url;
 block body
   style(type="text/css").
        .mysection-contatti{
             background-image:url(#{tablet});
-            height:30vh;
+            height:170px;
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-position:center;
+
+         }
+         .mysection-contatti-banner{
+            background-image:url(#{cover});
+            height:50vh;
             background-repeat:no-repeat;
             background-size:cover;
             background-position:center;
 
          }
          .mybtn{background:#ac8425;color:#fff;}
-
+         .logo-container {
+           width:100px;
+           margin-top:5px;
+         }
+         h1.banner-title{
+           color:#fff;
+           margin-top:-20px;
+         }
 
   section.mysection-contatti.d-flex.flex-column.justify-content-center.align-items-center
      .banner-content.banner-content-storia
 
-          h1.banner-title.font-ultra-bold.text-center(style='color:#d3c4a7')
+          h1.banner-title.font-ultra-bold.text-center
             != RichText.asText(contatti.data.contatti)
+
+  section.mysection-contatti-banner.d-flex.flex-column.justify-content-center.align-items-center
+     .banner-content.banner-content-storia
 
 
   .container-fluid.bg-black

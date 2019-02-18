@@ -56,6 +56,9 @@ block body
                         !=RichText.asText(servizio.data.partecipazione_congiunta)
                       p.descrizione-servizio.text-center
                         !=RichText.asText(servizio.data.descrizionebar)
+                      p.desc-attiv.text-center.px-5.pb-5
+                        a(href="/"+servizio.lang+'/contatti')
+                           img(src=servizio.data.info.url)
                 div.blocco-paragrafo-ristorante.px-5
                       h3.text-center
                         !=RichText.asText(servizio.data.titoloristorante)
@@ -79,7 +82,9 @@ block body
                         !=RichText.asText(servizio.data.sviluppoprodotti)
                       p.desc-attiv.text-center.px-5.pb-5
                         !=RichText.asText(servizio.data.descrizionesviluppoprodotti)
-
+                      p.desc-attiv.text-center.px-5.pb-5
+                        a(href="/"+servizio.lang+'/contatti')
+                           img(src=servizio.data.info.url)
                 div.blocco-paragrafo-ufficio.pb-5
                       h3.text-center
                         !=RichText.asText(servizio.data.titoloufficio)
@@ -95,6 +100,9 @@ block body
                         !=RichText.asText(servizio.data.attivitadistribuzione)
                       p.desc-attiv.text-center.px-5
                         !=RichText.asText(servizio.data.descrizioneattivitadistribuzione)
+                      p.desc-attiv.text-center.px-5.pb-5
+                        a(href="/"+servizio.lang+'/contatti')
+                           img(src=servizio.data.info.url)
 
 
 

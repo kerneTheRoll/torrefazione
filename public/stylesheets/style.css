@@ -45,6 +45,7 @@
 
 
 
+
 .titoloCover {
   font-family: mont-extra-bold;
 }
@@ -56,6 +57,25 @@
 .sottoTitolo-servizi {
   font-family: mont-normal-text;
 }
+
+.non-mostrare {
+  display: none;
+}
+
+.richiesta {
+
+
+  position: relative;
+
+  display: block;
+  border-bottom: 8px solid;
+  padding: 0;
+  max-width: 60%;
+  border-image: url('../images/dorato.jpg')30;
+  margin: 10px auto;
+
+}
+
 
 .banner-home {
   height: 100vh;
@@ -528,9 +548,12 @@ h5.testo-dorato-su-bianco {
   border-image: url('../images/dorato.jpg')30;
 }
 
+
+
 .banner-content-storia {
   margin-top: 100px;
   line-height: 50px;
+  height: 20px;
 }
 
 .blocco-dorato {
@@ -582,7 +605,7 @@ table.table {
 
   max-width: 60%;
   margin: 10px auto;
-  min-height: 650px;
+  min-height: 450px;
 }
 
 .capsule-header {
@@ -595,6 +618,8 @@ table.table {
   font-weight: 900;
 
 }
+
+
 
 .descri-testo {
   font-family: 'Montserrat', sans-serif;
@@ -2145,12 +2170,24 @@ div.footer {
 }
 
 .container-table {
-  height: 900px;
+
   margin-top: 50px;
   width: 100%;
 }
 
+.container-language {
+  right: 10px;
+  position: absolute;
+  top: 40px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+}
 
+.container-language img {
+  display: inline-block;
+  width: 40px;
+}
 
 .container-table table tr {
   text-align: center;
@@ -2354,6 +2391,7 @@ div.footer {
   .banner-content.banner-content-storia {
     padding-top: 50px;
     margin-top: 100px;
+
   }
 
   .sidebar {

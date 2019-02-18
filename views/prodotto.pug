@@ -50,13 +50,13 @@ block body
 
 
                                 p.px-md-5.capsule-header
-                                    span.imballagio-capsule
+                                    span.imballagio-capsule.testo-dorato
                                             != RichText.asText(prod.data.imballaggio)
                           .col-md-4
                               img.imageCapsule(src=prod.data.image2.url)
 
                     else
-                              p.px-md-5.py-xs-4.descri-testo.py-md-3.mt-4.text-justify(style='width:80%;margin:10px auto')
+                              p.px-md-5.py-xs-4.descri-testo.py-md-3.mt-4.text-center(style='width:80%;margin:10px auto')
                                       !=RichText.asText(prod.data.descrizione_prodotto)
                               p.px-md-5.py-xs-4.descri-testo.text-center
                                         span.composizione.arancone-testo.text-extra-bold.text-upper
@@ -68,15 +68,23 @@ block body
                                           !=RichText.asText(prod.data.titolo_origine)
                                         span.px-2.composizione-descrizione
                                           !=RichText.asText(prod.data.testo_orgine)
-                              p.px-md-5.py-xs-4.descri-testo.text-center
-                                        span.imballaggio.text-extra-bold.text-upper.arancone-testo
-                                            != RichText.asText(prod.data.imballaggio)
+                              if prod.data.imballaggio.length
+                                  p.px-md-5.py-xs-4.descri-testo.text-center
+                                            span.imballaggio.text-extra-bold.text-upper.arancone-testo
+                                                != RichText.asText(prod.data.imballaggio)
 
                     div(class=(categoria === 'capsule')? 'container-table' : '')
-                        table.table
+                        if categoria === 'miscele'
+                          .container
+                            img(style='display:block;max-width:100%;margin:10px auto')(src=prod.data.chicco.url)
+                            h2.text-center.testo-dorato.text-extra-bold.richiesta
+                              a(href='/'+prod.lang+'/contatti')
+                                 !=RichText.asText(prod.data.richiedi)
+                            img.mt-5.img-fluid.bordo-oro-bottom(src=prod.data.miscela_personalizzata.url)
+                        table(class=(categoria === 'miscele')? 'non-mostrare' : 'table')
 
                           tbody.tabella-prodotti
-                            tr.tostatura
+                            tr.tostatura(style='height:10px;')
 
                               td.text-upper.text-center.align-middle.skil-prod
                                 != RichText.asText(prod.data.tostatura)
@@ -86,18 +94,18 @@ block body
 
 
 
-                            tr(style='padding-bottom:100px')
+                            tr(style='height:100px;')
 
-                              td.py-3.text-upper.align-middle.text-center.skil-prod
+                              td.py-3.text-upper.align-bottom.text-center.skil-prod
                                   != RichText.asText(prod.data.intensita_titolo)
-                              td.py-3.align-middle
+                              td.py-3.align-bottom
                                 ul(class='start list-unstyled start-'+prod.data.intensita)
                                   li
                                   li
                                   li
                                   li
                                   li
-                            tr
+                            tr(style='height:10px;')
 
                               td.text-upper.align-middle.text-center.skil-prod
                                   != RichText.asText(prod.data.aroma_titolo)
@@ -108,7 +116,7 @@ block body
                                   li
                                   li
                                   li
-                            tr
+                            tr(style='height:10px;')
 
                               td.text-upper.align-middle.text-center.skil-prod
                                   != RichText.asText(prod.data.corpo_titolo)
@@ -119,7 +127,7 @@ block body
                                   li
                                   li
                                   li
-                            tr
+                            tr(style='height:10px;')
 
                               td.text-upper.py-4.text-center.skil-prod
                                   != RichText.asText(prod.data.persistenza_titolo)
@@ -130,9 +138,8 @@ block body
                                   li
                                   li
                                   li
-                            tr
-                              td
-                              td.testo-dorato.skil-prod
+                  .container.testo-dorato.font-ultra-bold.px-5(style='height:350px;margin-top:20px;')
+                          div.px-5
                                 != RichText.asText(prod.data.compatibile)
     -// Display the slices
       script(type='text/javascript').
