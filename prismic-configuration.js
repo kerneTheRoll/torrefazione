@@ -13,7 +13,7 @@ module.exports = {
   // As your project grows, you should update this function according to your routes
   linkResolver: function(doc, ctx) {
     if (doc.type == "page") return `/${doc.lang}/page/${doc.uid}`;
-    if (doc.type == "prodotto") return `/${doc.lang}/prodotto/${doc.uid}`;
+    if (doc.type == "prodotto") return `/${doc.lang}/prodotti/${doc.uid}`;
     if (doc.type == "homepage") return `/${doc.lang}`;
     if (doc.type == "azienda") return `/${doc.lang}/azienda`;
 

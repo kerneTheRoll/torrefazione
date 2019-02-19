@@ -75,7 +75,6 @@ app.use(I18NUrl(), (req, res, next) => {
         .then(function(response) {
           res.locals.categ = response.results;
           res.locals.menu = menu;
-          console.log(menu);
 
           next();
         })
@@ -96,6 +95,7 @@ function getCategoria(req, res, next) {
         res.status(404).send("page not found");
       } else {
         req.categoria = categoria;
+        console.log(categoria);
       }
 
       next();
@@ -109,8 +109,7 @@ function getCategoria(req, res, next) {
 // io prendo poi l'id del documento e lo vado a fetchare dal mio campo "collegamento a un documento"
 function getProdottoSimile(req, res, next) {
   const id = req.categoria.id;
-  console.log("sioamo su prodotti simili\n");
-  console.log(id);
+
   req.prismic.api
     .query(
       [
@@ -122,7 +121,7 @@ function getProdottoSimile(req, res, next) {
     )
     .then(function(response) {
       // response is the response object, response.results holds the documents
-      console.log(response.results);
+
       req.prodottoFiglio = response.results;
 
       next();
@@ -141,6 +140,7 @@ function renderCategoria(req, res) {
   res.render("categorie", {
     title: "Categorie",
     categoria: req.categoria.uid,
+    categories: req.categoria,
     categorie: req.prodottoFiglio
   });
 }
@@ -168,9 +168,7 @@ app.get(I18NUrl("/"), (req, res, next) => {
             Prismic.Predicates.at("my.prodotto.mostra_in_home", 1)
           ],
 
-          {
-            orderings: "[my.prodotto.title]"
-          }
+          I18NConfig(req)
         )
         .then(function(response) {
           // response is the response object, response.results holds the documents
@@ -236,19 +234,23 @@ app.get(I18NUrl("/page/:uid"), (req, res, next) => {
     });
 });
 
-app.get(I18NUrl("/prodotto/:uid"), (req, res, next) => {
+app.get(I18NUrl("/prodotti/:uid"), (req, res, next) => {
   const uid = req.params.uid;
   let number = 0;
   req.prismic.api.getByUID("prodotto", uid, I18NConfig(req)).then(prodotto => {
     req.categoriaScelta = prodotto.data.categoria.uid;
+    req.prodotto = prodotto;
     req.prismic.api
-      .query(Prismic.Predicates.at("document.type", "prodotto"), {
-        orderings: "[my.prodotto.title]"
-      })
+      .query(
+        Prismic.Predicates.at("document.type", "prodotto"),
+        I18NConfig(req)
+      )
 
       .then(function(response) {
         // response is the response object, response.results holds the documents
+        /***qui potrei chiamare la pagina prodotto che ospita e mi da solo la lingua */
 
+        /****************+fine  */
         rispostaFiltrata = response.results.filter(elemento => {
           return elemento.data.categoria.uid === req.categoriaScelta;
         });
@@ -257,12 +259,17 @@ app.get(I18NUrl("/prodotto/:uid"), (req, res, next) => {
         //console.log("passato paramento " + uid);
         // res.render("homepage", { home: home, prodotto: response.results });
 
-        res.render("prodotto", {
-          prodotto: rispostaFiltrata,
-          numero: uid,
-          categoria: req.categoriaScelta,
-          title: "prodotto"
-        });
+        res
+          .render("prodotto", {
+            prodotti: req.prodotto,
+            prodotto: rispostaFiltrata,
+            numero: uid,
+            categoria: req.categoriaScelta,
+            title: "prodotto"
+          })
+          .catch(error => {
+            next(`error when retriving homepage ${error.message}`);
+          });
       });
   });
 });

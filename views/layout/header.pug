@@ -62,19 +62,19 @@ header#header
   .logo-container
          img(src=menu.data.logo_brand.url width='100px')
   .container-language
-    //
-     for lang in I18N.languages
-        - var selected = lang.key === I18N.current ? true : false;
-        - var alternateDocLink = activeDoc.alternate_languages.find(al => al.lang === lang.key);
-        - var alternateUrl = selected ? ctx.linkResolver(activeDoc) : (alternateDocLink ? ctx.linkResolver(alternateDocLink) : '');
+
+        for lang in I18N.languages
+            - var selected = lang.key === I18N.current ? true : false;
+            - var alternateDocLink = activeDoc.alternate_languages.find(al => al.lang === lang.key);
+            - var alternateUrl = selected ? ctx.linkResolver(activeDoc) : (alternateDocLink ? ctx.linkResolver(alternateDocLink) : '');
 
 
-          if lang.label === 'Italiano'
-            a(value=lang.key href=alternateUrl )
-                img(src=menu.data.icon_ita.url)
-          if lang.label === 'English'
-            a(value=lang.key href=alternateUrl )
-                img(src=menu.data.icon_eng.url)
+              if lang.label === 'Italiano'
+                a(value=lang.key href=alternateUrl )
+                    img(src=menu.data.icon_ita.url)
+              if lang.label === 'English'
+                a(value=lang.key href=alternateUrl )
+                    img(src=menu.data.icon_eng.url)
 
 
 

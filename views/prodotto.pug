@@ -2,7 +2,7 @@ extends ./layout.pug
 
 block variables
   - var nav_class = 'dark'
-  - var activeDoc = prodotto
+  - var activeDoc = prodotti
 
 block body
 
@@ -13,7 +13,8 @@ block body
     -// Homepage Banner Section
     section.homepage-banner-2
        .container.mt-5.pt-3
-          h2.testo-dorato.pr-5.mt-5.text-center.text-extra-bold Prodotti
+          h2.testo-dorato.pr-5.mt-5.text-center.text-extra-bold
+
 
     div.container-fluid(style='position:relative;')
 
@@ -39,7 +40,7 @@ block body
                     div.container-fluid.pb-5
                      img.immagine-prodotto.centered.wow.fadeInLeft(src=prod.data.image.url)
                   .container(style='font-size:1.2em;')
-                    if categoria === 'capsule'
+                    if categoria === 'capsule' ||categoria === 'capsule-en'
                         .row
                           .col-md-8
                               p.px-md-5.py-xs-4.descri-testo.py-md-3.mt-4.capsule-header
@@ -73,15 +74,15 @@ block body
                                             span.imballaggio.text-extra-bold.text-upper.arancone-testo
                                                 != RichText.asText(prod.data.imballaggio)
 
-                    div(class=(categoria === 'capsule')? 'container-table' : '')
-                        if categoria === 'miscele'
+                    div(class=(categoria === 'capsule' || categoria ==='capsule-en')? 'container-table' : '')
+                        if categoria === 'miscele' || categoria === 'blends'
                           .container
                             img(style='display:block;max-width:100%;margin:10px auto')(src=prod.data.chicco.url)
                             h2.text-center.testo-dorato.text-extra-bold.richiesta
                               a(href='/'+prod.lang+'/contatti')
                                  !=RichText.asText(prod.data.richiedi)
                             img.mt-5.img-fluid.bordo-oro-bottom(src=prod.data.miscela_personalizzata.url)
-                        table(class=(categoria === 'miscele')? 'non-mostrare' : 'table')
+                        table(class=(categoria === 'miscele' || categoria === 'blends' )? 'non-mostrare' : 'table')
 
                           tbody.tabella-prodotti
                             tr.tostatura(style='height:10px;')
