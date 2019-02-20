@@ -71,10 +71,10 @@ header#header
 
               if lang.label === 'Italiano'
                 a(value=lang.key href=alternateUrl )
-                    img(src=menu.data.icon_ita.url)
+                    img(src=menu.data.icon_ita.url class=(lang.key === I18N.current) ? 'lingua-scelta' : 'overl')
               if lang.label === 'English'
-                a(value=lang.key href=alternateUrl )
-                    img(src=menu.data.icon_eng.url)
+                a(value=lang.key href=alternateUrl  )
+                    img(src=menu.data.icon_eng.url class=(lang.key === I18N.current) ? 'lingua-scelta' : 'overl')
 
 
 

@@ -9,7 +9,7 @@ block body
   style(type="text/css").
        .mysection-contatti{
             background-image:url(#{tablet});
-            height:170px;
+            height:10px;
             background-repeat:no-repeat;
             background-size:cover;
             background-position:center;
@@ -17,7 +17,7 @@ block body
          }
          .mysection-contatti-banner{
             background-image:url(#{cover});
-            height:50vh;
+            height:40vh;
             background-repeat:no-repeat;
             background-size:cover;
             background-position:center;
@@ -33,14 +33,15 @@ block body
            margin-top:-20px;
          }
 
-  section.mysection-contatti.d-flex.flex-column.justify-content-center.align-items-center
-     .banner-content.banner-content-storia
 
-          h1.banner-title.font-ultra-bold.text-center
-            != RichText.asText(contatti.data.contatti)
+
+
+
 
   section.mysection-contatti-banner.d-flex.flex-column.justify-content-center.align-items-center
      .banner-content.banner-content-storia
+         h1.banner-title.font-ultra-bold.text-center
+            != RichText.asText(contatti.data.contatti)
 
 
   .container-fluid.bg-black

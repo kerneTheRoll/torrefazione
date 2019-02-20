@@ -2175,6 +2175,11 @@ div.footer {
   width: 100%;
 }
 
+.overl {
+  opacity: .4;
+
+}
+
 .container-language {
   right: 10px;
   position: absolute;

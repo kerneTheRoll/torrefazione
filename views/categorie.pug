@@ -13,8 +13,11 @@ block body
     -// Homepage Banner Section
     section.homepage-banner-2
        .container.mt-5.pt-3
-          h2.testo-dorato.pr-5.mt-5.text-center.text-extra-bold #{title}
-
+          h2.testo-dorato.pr-5.mt-5.text-center.text-extra-bold
+            if categories.lang === 'it-it'
+                |Categorie
+            else
+                | Categories
     div.container-fluid(style='position:relative;')
 
       .arrow-left
