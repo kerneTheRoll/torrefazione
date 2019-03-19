@@ -109,22 +109,36 @@ block body
             !=RichText.asText(contatti.data.nome_azienda)
           div.text-center.text-dorato.marker-icon.py-3
             i.fas.fa-map-marker-alt
+          h5.text-center.text-white
+            != RichText.asText(contatti.data.reggio_emilia)
           .viacap.text-center.mt-2
             span.text-white2
               !=RichText.asText(contatti.data.residenza)
-          .viacap.text-center.mt-2
+          h5.text-center.text-white.mt-2
+            != RichText.asText(contatti.data.sede_parma)
+          .viacap.text-center
             span.text-white2
-              !=RichText.asText(contatti.data.localita)
+              !=RichText.asText(contatti.data.localita_reggio)
+
           div.text-center.text-dorato.marker-icon.pb-4.mt-3
             i.fas.fa-phone.rotate.phone
+          h5.text-center.text-white
+            != RichText.asText(contatti.data.reggio_emilia)
+          .viacap.text-center
+            span.text-white2
+              !=RichText.asText(contatti.data.tel_reggio)
+          .viacap.text-center
+
+          h5.text-center.text-white
+            != RichText.asText(contatti.data.sede_parma)
           .viacap.text-center
             span.text-white2
               !=RichText.asText(contatti.data.telefono)
           .viacap.text-center
-            span.text-white2
-              !=RichText.asText(contatti.data.fax)
+
           div.text-center.text-dorato.marker-icon
             i.fas.fa-envelope
+
           .viacap.text-center.mt-2
             span.text-white2
               !=RichText.asText(contatti.data.email)
