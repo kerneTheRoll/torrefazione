@@ -1,17 +1,11 @@
 $(document).ready(function() {
   new WOW().init();
+
   $(".titolo-centro").hide();
-  $("h2.titoloCover").click(function() {
-    if ($(".container-element").css("display") == "block") {
-      $("h2.titoloCover").attr("data-target", "#exampleModal");
-      $("h2.titoloCover").attr("data-toggle", "modal");
-    } else {
-      console.log("contenitore non si vede siamo in desktop");
-    }
-  });
+
   $(".blocco-paragrafo-ristorante").show();
-  $(".titolo-sinistra").click(function() {
-    $(this).hide();
+  $(".titolo-sinistra,.titolo-sinistra-sm").click(function() {
+    $(".titolo-sinistra").hide();
     $(".blocco-paragrafo-bar").fadeIn();
     $(".blocco-paragrafo-ristorante").hide();
     $(".blocco-paragrafo-ufficio").hide();
@@ -26,9 +20,9 @@ $(document).ready(function() {
     $(".im-centro").addClass("blurred");
     $(".im-destra").addClass("blurred");
   });
-  $(".titolo-centro").click(function() {
+  $(".titolo-centro,.titolo-centro-sm").click(function() {
     $(".blocco-paragrafo-bar").fadeOut();
-    $(this).hide();
+    $(".titolo-centro").hide();
     $(".titolo-destra").show();
     $(".titolo-sinistra").show();
     $(".blocco-paragrafo-ristorante").fadeIn();
@@ -42,8 +36,8 @@ $(document).ready(function() {
     $(".im-sinistra").addClass("blurred");
     $(".im-destra").addClass("blurred");
   });
-  $(".titolo-Destra").click(function() {
-    $(this).hide();
+  $(".titolo-Destra,.titolo-Destra-sm").click(function() {
+    $(".titolo-Destra").hide();
     $(".blocco-paragrafo-bar").fadeOut();
     $(".titolo-centro").show();
     $(".titolo-sinistra").show();
@@ -70,6 +64,21 @@ $(document).ready(function() {
     currentPagerPosition: "left",
     pauseOnHover: true,
     pause: 6000
+  });
+  $("#slideContainer").lightSlider({
+    gallery: false,
+    auto: true,
+    item: 1,
+    loop: true,
+    slideMargin: 0,
+    controls: false,
+    enableDrag: false,
+    currentPagerPosition: "left",
+    pauseOnHover: false,
+    pager: false,
+    pause: 6000,
+    speed: 400,
+    cssEasing: "ease"
   });
   var slide = $("#slideProdotti").lightSlider({
     item: 2,

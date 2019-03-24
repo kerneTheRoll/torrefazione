@@ -37,14 +37,18 @@
   margin: 0 auto;
 }
 
-#exampleModal {
-  display: none;
+
+
+
+button.testo-dorato.titoloCover.titolo-destra {
+  border: 0;
 }
 
-
-
-
-
+.notV {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .titoloCover {
   font-family: mont-extra-bold;
@@ -355,7 +359,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: mont-normal-text;
-  position: relative;
+
 
 }
 
@@ -830,6 +834,9 @@ span.icon:hover {
   }
 
 
+  .desk-nascosto {
+    display: block;
+  }
 
 
 
@@ -988,12 +995,16 @@ a.ban {
   z-index: 0;
 }
 
+button.testo-dorato.titoloCover {
+  border: 0;
+}
 
 .titoloCover {
   z-index: 9;
-  font-size: 50px;
+  font-size: 30px;
   position: absolute;
 }
+
 
 .testo-sottile {
   font-weight: 100;
@@ -1034,10 +1045,6 @@ a.ban {
   z-index: 1;
 }
 
-.logo-container img {
-  width: 200px;
-  margin-top: 40px;
-}
 
 .offMargin {
   margin-left: 250px;
@@ -1166,9 +1173,6 @@ p {
   line-height: 1.5;
 }
 
-div.modal div.modal-backdrop {
-  z-index: 0;
-}
 
 .imageCapsule {
   display: block;
@@ -1958,6 +1962,12 @@ footer a {
   content: close-quote;
   position: relative;
   top: 0.3em;
+}
+
+@media screen and (max-width:810px) {
+  .notV {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 767px) {

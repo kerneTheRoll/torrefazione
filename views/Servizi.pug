@@ -6,6 +6,11 @@ block variables
   - var activeDoc = servizio
 
 block body
+  style(type="text/css").
+        .logo-container{
+
+            margin-top: 35px;
+        }
 
   -// Content Section
 
@@ -28,22 +33,29 @@ block body
 
             .col-md-4.d-flex.flex-column.justify-content-center.align-items-center
               div.servizi-image.blurred.im-sinistra(style='background-image:url('+servizio.data.immaginebar.url+');')
-              h2.testo-dorato.titoloCover.titolo-sinistra(style='position:relative;cursor:pointer')
-                  !=RichText.asText(servizio.data.titolo_bar)
+              button.testo-dorato.titoloCover.titolo-sinistra-sm.bottoneModal.d-lg-none.d-md-none( data-toggle="modal" data-target="#exampleModalCenter")
+                !=RichText.asText(servizio.data.titolo_bar)
+              .notV
+                h2.testo-dorato.titoloCover.titolo-sinistra(style='position:relative;cursor:pointer')
+                    !=RichText.asText(servizio.data.titolo_bar)
 
 
 
             .col-md-4.d-flex.flex-column.justify-content-center.align-items-center.contenitore-ristorante
               .container-element
               div.servizi-image.im-centro(style='background-image:url('+servizio.data.immagineristorante.url+');')
-
-              h2.testo-dorato.titoloCover.titolo-centro
-                  !=RichText.asText(servizio.data.titoloristorante)
+              button.testo-dorato.titoloCover.titolo-centro-sm.bottoneModal.d-lg-none.d-md-none( data-toggle="modal" data-target="#exampleModalCenter")
+                 !=RichText.asText(servizio.data.titoloristorante)
+              .notV
+                h2.testo-dorato.titoloCover.titolo-centro
+                    !=RichText.asText(servizio.data.titoloristorante)
             .col-md-4.d-flex.flex-column.justify-content-center.align-items-center
               div.servizi-image.blurred.im-destra(style='background-image:url('+servizio.data.immagineufficio.url+');')
-
-              h2.testo-dorato.titoloCover.titolo-destra( )
+              button.testo-dorato.titoloCover.titolo-destra-sm.bottoneModal.d-lg-none.d-md-none( data-toggle="modal" data-target="#exampleModalCenter")
                   !=RichText.asText(servizio.data.titoloufficio)
+              div.notV
+                h2.testo-dorato.titoloCover.titolo-destra
+                    !=RichText.asText(servizio.data.titoloufficio)
         .container
             .bubble
                 div.blocco-paragrafo-bar
@@ -106,33 +118,76 @@ block body
 
 
 
-        div.container-fluid(style='position:relative')
-          #exampleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
-              .modal-dialog.modal-dialog-centered(role='document')
-                .modal-content
-                  .modal-header
-                    h5#exampleModalLabel
-                    button.close(type='button', data-dismiss='modal', aria-label='Close')
-                      span(aria-hidden='true') &times;
-                  .modal-body
-                      div.blocco-paragrafo-bar
+  #exampleModalCenter.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+    .modal-dialog.modal-dialog-centered(role='document')
+      .modal-content
+        .modal-header
 
-                          h3.text-center
-                            !=RichText.asText(servizio.data.titolo_bar)
-                      div.blocco-paragrafo-ristorante
-                          h3.text-center
-                            !=RichText.asText(servizio.data.titoloristorante)
-                          h4.sotto-titolo.text-center.testo-dorato.text-upper.text-extra-bold
-                            !=RichText.asText(servizio.data.sotto_titolo_ristorante)
-                          p.descrizione-servizio.text-center
-                            !=RichText.asText(servizio.data.descrizioneristorante)
-                          h3.text-center
-                            !=RichText.asText(servizio.data.titolo_consulenza_appertura)
-                      div.blocco-paragrafo-ufficio
-                          h3.text-center
-                            !=RichText.asText(servizio.data.titoloufficio)
-                  .modal-footer
-                    button.btn.btn-secondary(type='button', data-dismiss='modal') Chiudi
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') &times;
+        .modal-body
+           div.blocco-paragrafo-bar
+
+                      h3.text-center
+                        !=RichText.asText(servizio.data.titolo_bar)
+                      h4.sotto-titolo.text-center.testo-dorato.text-upper.text-extra-bold
+                        !=RichText.asText(servizio.data.sotto_titolo_bar)
+                      h5.text-center.sottotit.mb-3.mt-5
+                        !=RichText.asText(servizio.data.partecipazione_congiunta)
+                      p.descrizione-servizio.text-center
+                        !=RichText.asText(servizio.data.descrizionebar)
+                      p.desc-attiv.text-center.px-5.pb-5
+                        a(href="/"+servizio.lang+'/contatti')
+                           img(src=servizio.data.info.url)
+           div.blocco-paragrafo-ristorante.px-5
+                      h3.text-center
+                        !=RichText.asText(servizio.data.titoloristorante)
+                      h4.sotto-titolo.text-center.testo-dorato.text-upper.text-extra-bold
+                        !=RichText.asText(servizio.data.sotto_titolo_ristorante)
+                      p.descrizione-servizio.text-center
+                        !=RichText.asText(servizio.data.descrizioneristorante)
+                      h5.text-center.sottotit.mb-3.mt-5
+                        !=RichText.asText(servizio.data.titolo_consulenza_appertura)
+                      p.desc-attiv.text-center.px-5
+                        !=RichText.asText(servizio.data.descrizione_consulenza_apertura)
+                      h5.text-center.sottotit.mb-3.mt-5
+                        !=RichText.asText(servizio.data.consolidamentoattivita)
+                      p.desc-attiv.text-center.px-5
+                        !=RichText.asText(servizio.data.descrizioneconsolidamentoattivita)
+                      h5.text-center.sottotit.mb-3.mt-5
+                        !=RichText.asText(servizio.data.recuperoattivita)
+                      p.desc-attiv.text-center.px-5
+                        !=RichText.asText(servizio.data.descrizionerecuperoattivita)
+                      h5.text-center.sottotit.mb-3.mt-5
+                        !=RichText.asText(servizio.data.sviluppoprodotti)
+                      p.desc-attiv.text-center.px-5.pb-5
+                        !=RichText.asText(servizio.data.descrizionesviluppoprodotti)
+                      p.desc-attiv.text-center.px-5.pb-5
+                        a(href="/"+servizio.lang+'/contatti')
+                           img(src=servizio.data.info.url)
+           div.blocco-paragrafo-ufficio.pb-5
+                      h3.text-center
+                        !=RichText.asText(servizio.data.titoloufficio)
+                      h4.sotto-titolo.text-center.testo-dorato.text-upper.text-extra-bold
+                        !=RichText.asText(servizio.data.sotto_titolo_ufficio)
+                      p.descrizione-servizio.text-center
+                        !=RichText.asText(servizio.data.descrizioneufficio)
+                      h5.text-center.sottotit.mb-3.mt-5
+                        !=RichText.asText(servizio.data.avvioattivita)
+                      p.desc-attiv.text-center.px-5
+                        !=RichText.asText(servizio.data.descrizioneavvioattivita)
+                      h5.text-center.sottotit.mb-3.mt-5
+                        !=RichText.asText(servizio.data.attivitadistribuzione)
+                      p.desc-attiv.text-center.px-5
+                        !=RichText.asText(servizio.data.descrizioneattivitadistribuzione)
+                      p.desc-attiv.text-center.px-5.pb-5
+                        a(href="/"+servizio.lang+'/contatti')
+                           img(src=servizio.data.info.url)
+
+
+
+
+
 
 
 

@@ -10,6 +10,10 @@ block variables
 
 block body
   style(type="text/css").
+        .logo-container{
+            width: 350px;
+            margin-top: 90px;
+        }
        .homepage-banner{
             background-image:url(#{desktop});
 
@@ -56,11 +60,17 @@ block body
   .homepage(style='background:#100605;')
 
     -// Homepage Banner Section
-    section.homepage-banner.banner-home
+    div#slideContainer
+        section.homepage-banner.banner-home
 
-      .banner-content.grid-container.banner-home
-        h2.banner-title.font-ultra-bold.text-dorato-immagine
-          != RichText.asText(home.data.motto)
+          .banner-content.grid-container.banner-home
+            h2.banner-title.font-ultra-bold.text-dorato-immagine
+              != RichText.asText(home.data.motto)
+        section.homepage-banner.banner-home
+
+          .banner-content.grid-container.banner-home
+            h2.banner-title.font-ultra-bold.text-dorato-immagine
+              != RichText.asText(home.data.motto)
     section.banner-section-site
       h2.titolo-sezioni.font-ultra-bold.font-mont.pt-5
         != RichText.asText(home.data.titolo_sezioni)
