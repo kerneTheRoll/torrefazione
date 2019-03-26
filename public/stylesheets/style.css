@@ -889,7 +889,10 @@ a.ban {
 }
 
 
-.homepage-banner {
+.homepage-banner,
+.banner-home-semi,
+.banner-home-tazza,
+.banner-home-raccolta {
   margin: -70 0 40px;
   padding: 10em 0 6em;
   background-position: center;

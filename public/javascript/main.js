@@ -76,7 +76,7 @@ $(document).ready(function() {
     currentPagerPosition: "left",
     pauseOnHover: false,
     pager: false,
-    pause: 6000,
+    pause: 5000,
     speed: 400,
     cssEasing: "ease"
   });

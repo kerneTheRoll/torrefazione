@@ -7,6 +7,15 @@ block variables
   - var tablet  = home.data.backgroundImage.tablet.url
   - var mobile  = home.data.backgroundImage.mobile.url
   -var collaborazione =home.data.immagine_collaborazione.url
+  -var tazza = home.data.banner_slide2.url
+  -var semi = home.data.banner_slide3.url
+  -var raccolta = home.data.banner_slide4.url
+  -var tazzaTablet = home.data.banner_slide2.tablet.url
+  -var tazzaMobile = home.data.banner_slide2.mobile.url
+  -var semiTablet = home.data.banner_slide3.tablet.url
+  -var semiMobile = home.data.banner_slide3.mobile.url
+  -var raccoltaTablet = home.data.banner_slide4.tablet.url
+  -var raccoltaMobile = home.data.banner_slide4.mobile.url
 
 block body
   style(type="text/css").
@@ -15,11 +24,25 @@ block body
             margin-top: 90px;
         }
        .homepage-banner{
-            background-image:url(#{desktop});
+              background-image:url(#{desktop});
 
 
-            background-repeat:no-repeat;
-            background-size:content;
+              background-repeat:no-repeat;
+              background-size:content;
+         }
+        .banner-home-tazza{
+               background-image:url(#{tazza});
+
+
+              background-repeat:no-repeat;
+              background-size:content;
+         }
+        .banner-home-semi{
+               background-image:url(#{semi});
+
+
+              background-repeat:no-repeat;
+              background-size:content;
          }
 
         .immagine-collaborazione{
@@ -39,6 +62,28 @@ block body
        @media only screen and (max-width:768px){
           .homepage-banner{
             background-image:url(#{tablet});
+
+
+
+         }
+        .logo-container{
+            width: 170px;
+            margin-top:50px;
+        }
+         .banner-home-tazza{
+            background-image:url(#{tazzaTablet});
+
+
+
+         }
+         .banner-home-semi{
+            background-image:url(#{semiTablet});
+
+
+
+         }
+        .homepage-banner,.banner-home-semi,.banner-home-tazza{
+
             height:50vh;
 
 
@@ -47,6 +92,24 @@ block body
            @media only screen and (max-width:400px){
           .homepage-banner{
             background-image:url(#{mobile});
+
+
+
+         }
+         .banner-home-tazza{
+            background-image:url(#{tazzaMobile});
+
+
+
+         }
+         .banner-home-semi{
+            background-image:url(#{semiMobile});
+
+
+
+         }
+         .homepage-banner,.banner-home-tazza,.banner-home-semi{
+
             height:500px;
 
 
@@ -66,11 +129,13 @@ block body
           .banner-content.grid-container.banner-home
             h2.banner-title.font-ultra-bold.text-dorato-immagine
               != RichText.asText(home.data.motto)
-        section.homepage-banner.banner-home
+        section.banner-home-semi
 
           .banner-content.grid-container.banner-home
-            h2.banner-title.font-ultra-bold.text-dorato-immagine
-              != RichText.asText(home.data.motto)
+        section.banner-home-tazza
+
+          .banner-content.grid-container.banner-home
+
     section.banner-section-site
       h2.titolo-sezioni.font-ultra-bold.font-mont.pt-5
         != RichText.asText(home.data.titolo_sezioni)
