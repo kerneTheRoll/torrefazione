@@ -4,7 +4,8 @@ const app = require("./config");
 const config = require("./prismic-configuration");
 const PORT = app.get("port");
 const Cookies = require("cookies");
-
+const nodemailer = require("nodemailer");
+const Cred = require("./creds");
 //Must be at the end so it go through the Prismic middleware because ended up in the final route
 const I18N = require("./i18n.json");
 //provide a lang parameter in the route
@@ -49,7 +50,79 @@ app.use((req, res, next) => {
       res.status(404).send(error.message);
     });
 });
+/**nodemail api */
+function gestisciEmail(req, res, next) {
+  var message = "";
+  nodemailer.createTestAccount((err, account) => {
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true, // true for 465, false for other ports
+      tls: {
+        rejectUnauthorized: false
+      },
+      auth: {
+        type: "OAuth2",
+        user: Creds.user,
+        clientId: Creds.clientId,
 
+        clientSecret: Creds.clientSecret,
+        refreshToken: Creds.refreshToken
+      }
+    });
+    // bisogna controllare!!!!
+    const nome = req.body.nome;
+    const cognome = req.body.cognome;
+    const email = req.body.email;
+
+    const country = req.body.country;
+    const cap = req.body.cap;
+    const citta = req.body.citta;
+    const telefono = req.body.telefono;
+    const richiesta = req.body.richiesta;
+    const scelta = req.body.scelta;
+
+    // setup email data with unicode symbols
+    let mailOptions = {
+      to: "abdimohamed862992@gmail.com", // list of receivers
+      subject: "richiesta da parte di " + nome + " per " + scelta, // Subject line
+      text:
+        "Buona sera, una richiesta  a nome di  " +
+        nome +
+        " " +
+        cognome +
+        " numero di telefono " +
+        telefono +
+        " la richiesta scritta è " +
+        richiesta +
+        " effettuata da localita " +
+        country +
+        " cap " +
+        cap +
+        " città " +
+        citta
+    };
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        console.log(error);
+        req.message =
+          "Non è stato possibile inviare il messaggio, riprovare più tardi";
+      } else {
+        res.status(200).send({
+          message: "La Sua richiesta è stata inviata"
+        });
+      }
+
+      // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
+      // Preview URL: https://ethereal.email/message/WaQKMgKddxQDoou...
+    });
+  });
+}
+
+/** end nodmail api */
 //middleware to setup prismic profiles
 app.use((req, res, next) => {
   const cookies = new Cookies(req, res);
@@ -218,7 +291,19 @@ app.get(I18NUrl("/contatti"), (req, res, next) => {
       next(`error when retriving homepage ${error.message}`);
     });
 });
+function getContatti(req, res, next) {
+  req.prismic.api
+    .getSingle("contatti", I18NConfig(req))
+    .then(contatti => {
+      req.contatti = contatti;
 
+      next();
+    }, I18NConfig(req))
+    .catch(error => {
+      next(`error when retriving homepage ${error.message}`);
+    });
+}
+//app.post(I18NUrl("/contatti"), getContatti, gestisciEmail);
 // Route for pages
 app.get(I18NUrl("/page/:uid"), (req, res, next) => {
   const uid = req.params.uid;

@@ -104,6 +104,8 @@ block body
           .container-fluid.row.pt-4.blue-color.pl-4(style='position:relative')
                 button(type='submit').btn.mybtn#sub(style='position:absolute;right:35px')
                     != RichText.asText(contatti.data.bottone_invia)
+          .container.mt-3
+             h2#answers.pl-5.alert.alert-success.text-center
       .col-md-6.container-fluid.pl-5.contactme
           h2.testo-dorato.text-center
             !=RichText.asText(contatti.data.nome_azienda)

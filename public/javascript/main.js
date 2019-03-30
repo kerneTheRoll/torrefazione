@@ -1,6 +1,14 @@
 $(document).ready(function() {
   new WOW().init();
+  validaContatti();
+  jeoquery.defaultData.userName = "ladolcevia";
 
+  $("#country").jeoCountrySelect();
+
+  $("#postalCode").jeoPostalCodeLookup({
+    countryInput: $("#country"),
+    target: $("#postalPlace")
+  });
   $(".titolo-centro").hide();
 
   $(".blocco-paragrafo-ristorante").show();
@@ -53,6 +61,7 @@ $(document).ready(function() {
     $(".im-centro").addClass("blurred");
     $(".im-sinistra").addClass("blurred");
   });
+
   $("#image-slider").lightSlider({
     gallery: false,
     auto: true,
@@ -66,19 +75,13 @@ $(document).ready(function() {
     pause: 6000
   });
   $("#slideContainer").lightSlider({
-    gallery: false,
     auto: true,
-    item: 1,
     loop: true,
-    slideMargin: 0,
-    controls: false,
-    enableDrag: false,
-    currentPagerPosition: "left",
-    pauseOnHover: false,
+    pauseOnHover: true,
+    item: 1,
     pager: false,
-    pause: 5000,
-    speed: 400,
-    cssEasing: "ease"
+    controls: false,
+    slideMargin: 0
   });
   var slide = $("#slideProdotti").lightSlider({
     item: 2,
@@ -151,3 +154,90 @@ $(document).ready(function() {
     $(".sidebar").toggleClass("active");
   });
 });
+function validaContatti() {
+  $("#contatta").validate({
+    highlight: function(element) {
+      $(element).addClass("is-invalid");
+    },
+    unhighlight: function(element) {
+      $(element).removeClass("is-invalid");
+    },
+    rules: {
+      nome: {
+        required: true,
+        minlength: 4
+      },
+      cognome: {
+        required: true,
+        minlength: 4
+      },
+      email: {
+        required: true,
+        email: true
+      },
+
+      country: {
+        required: true
+      },
+      cap: {
+        required: true
+      },
+      citta: {
+        required: true,
+        minlength: 2
+      },
+      telefono: {
+        required: true,
+        number: true
+      }
+
+      // qui va bene
+    },
+
+    messages: {
+      nome: {
+        required: "campo obbligatorio",
+        minlength: "nome troppo corto, minimo 4 lettere"
+      },
+
+      cognome: {
+        required: "campo obbligatorio",
+        minlength: "cognome troppo corto, minimo 4 lettere",
+        required: "Campo obbligatorio"
+      },
+      email: {
+        required: "Campo obbligatorio",
+        email: "Campo Obbligatorio"
+      },
+      country: {
+        required: "Campo obbligatorio"
+      },
+      cap: {
+        required: "Campo obbligatorio"
+      },
+      citta: {
+        required: "Campo obbligatorio",
+        minlength: "Campo obbligatorio"
+      },
+      telefono: {
+        required: "Campo obbligatorio",
+        number: "*Campo obbligatorio"
+      },
+      richiesta: {
+        required: "scrivi un messaggio"
+      }
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        url: form.action,
+        type: form.method,
+        data: $(form).serialize(),
+        success: function(response) {
+          $("#answers")
+            .fadeIn("fast")
+            .html(response.message);
+        }
+      });
+    }
+  });
+}

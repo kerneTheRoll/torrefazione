@@ -2,7 +2,8 @@ header#header
   - var homeUrl = `/${I18N.current}`;
   .sidebar
       .container-fluid
-        span.float-right.chiudi X
+        span.float-right.chiudi
+          i.fas.fa-times
 
 
       ul.menu-list
@@ -16,8 +17,8 @@ header#header
             != RichText.asText(menu.data.azienda)
 
         li.wrapper-categoria
-          div.categorie.pb-3.mt-5
-            h5.text-upper.mt-2.animation-menu
+          div.categorie.mt-4
+            h5.text-upper.animation-menu(style='font-size:1.4em;margin-bottom:0px;')
               != RichText.asText(menu.data.i_nostri_prodott)
             ul.lista-categorie
                each linkItem in menu.data.menu_links
@@ -61,7 +62,7 @@ header#header
             include ./language-selector
   .logo-container
          img(src=menu.data.logo_brand.url )
-  .container-language
+  .container-language(style='position:absolute;rigth:10px;z-index:9999999999999')
 
         for lang in I18N.languages
             - var selected = lang.key === I18N.current ? true : false;

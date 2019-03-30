@@ -38,7 +38,10 @@
 }
 
 
-
+label.error {
+  color: red;
+  font-weight: bold;
+}
 
 button.testo-dorato.titoloCover.titolo-destra {
   border: 0;
@@ -348,7 +351,7 @@ html {
 
 .lista-categorie li a {
   padding: 0;
-  margin-right: 10px;
+
 }
 
 .lista-categorie {
@@ -589,8 +592,11 @@ h5.testo-dorato-su-bianco {
   transition: .3s;
   top: 0;
   left: -250px;
-
-  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Allan', Helvetica, Arial, sans-serif;
   z-index: 9999999;
 
 }
@@ -702,6 +708,7 @@ div.logo {
   cursor: pointer;
   border: none;
   background: transparent;
+
 
 
 
@@ -2418,6 +2425,7 @@ div.footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: justify;
 
   }
 
@@ -2454,6 +2462,7 @@ div.footer {
     font-weight: 400;
 
     text-decoration: none;
+    text-transform: uppercase;
 
   }
 
