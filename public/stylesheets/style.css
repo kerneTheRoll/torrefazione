@@ -47,6 +47,34 @@ button.testo-dorato.titoloCover.titolo-destra {
   border: 0;
 }
 
+#contatta {
+  position: relative;
+}
+
+div.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+  transition: all 0.3s;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.info-email-generico {
+  display: none;
+}
+
+div.loading-none {
+  display: none;
+}
+
 .notV {
   display: flex;
   justify-content: center;

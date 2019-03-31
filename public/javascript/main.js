@@ -228,14 +228,32 @@ function validaContatti() {
       }
     },
     submitHandler: function(form) {
+      $("div.loading-none")
+        .addClass("loading")
+        .removeClass("loading-none");
       $.ajax({
         url: form.action,
         type: form.method,
         data: $(form).serialize(),
         success: function(response) {
-          $("#answers")
-            .fadeIn("fast")
-            .html(response.message);
+          $("div.loading")
+            .addClass("loading-none")
+            .removeClass("loading");
+          $(".info-email-generico")
+            .show()
+            .addClass("alert-success")
+            .text(
+              "Grazie! Messaggio correttamente inviato, sarai contattato a breve"
+            );
+        },
+        error: function(response) {
+          $("div.loading")
+            .addClass("loading-none")
+            .removeClass("loading");
+          $(".info-email-generico")
+            .show()
+            .addClass("alert-danger")
+            .text("Non siamo riusciti a inviare email, riprova più tardi");
         }
       });
     }

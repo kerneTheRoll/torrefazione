@@ -71,6 +71,7 @@ block body
 
 
 
+
             .col-md-4.inp
                 input#postalCode.form-control(type='text' placeholder=RichText.asText(contatti.data.form_cap) name='cap')
 
@@ -104,8 +105,13 @@ block body
           .container-fluid.row.pt-4.blue-color.pl-4(style='position:relative')
                 button(type='submit').btn.mybtn#sub(style='position:absolute;right:35px')
                     != RichText.asText(contatti.data.bottone_invia)
-          .container.mt-3
-             h2#answers.pl-5.alert.alert-success.text-center
+          div.loading-none
+            div(style='width:250px')
+              .attesa
+                img.img-fluid(src='https://loading.io/spinners/message/lg.messenger-typing-preloader.gif')
+
+          div.alert.text-center.info-email.py-4.info-email-generico(style="max-width:95%",role="alert")
+
       .col-md-6.container-fluid.pl-5.contactme
           h2.testo-dorato.text-center
             !=RichText.asText(contatti.data.nome_azienda)

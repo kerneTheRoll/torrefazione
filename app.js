@@ -64,11 +64,11 @@ function gestisciEmail(req, res, next) {
       },
       auth: {
         type: "OAuth2",
-        user: Creds.user,
-        clientId: Creds.clientId,
+        user: Cred.user,
+        clientId: Cred.clientId,
 
-        clientSecret: Creds.clientSecret,
-        refreshToken: Creds.refreshToken
+        clientSecret: Cred.clientSecret,
+        refreshToken: Cred.refreshToken
       }
     });
     // bisogna controllare!!!!
@@ -303,7 +303,7 @@ function getContatti(req, res, next) {
       next(`error when retriving homepage ${error.message}`);
     });
 }
-//app.post(I18NUrl("/contatti"), getContatti, gestisciEmail);
+app.post(I18NUrl("/contatti"), getContatti, gestisciEmail);
 // Route for pages
 app.get(I18NUrl("/page/:uid"), (req, res, next) => {
   const uid = req.params.uid;
