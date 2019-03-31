@@ -149,8 +149,8 @@ typings/
 
 # dotenv environment variables file
 .env
- # configurazione
-creds.js
+
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
