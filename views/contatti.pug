@@ -46,7 +46,7 @@ block body
 
   .container-fluid.bg-black
     .row
-      .col-md-6
+      .col-md-12.col-lg-6
         form(method="post" action='/'+contatti.lang+'/contatti' name='contatti' id='contatta').container-fluid.pl-5.contactme
 
 
@@ -112,7 +112,7 @@ block body
 
           div.alert.text-center.info-email.py-4.info-email-generico(style="max-width:95%",role="alert")
 
-      .col-md-6.container-fluid.pl-5.contactme
+      .col-md-12.col-lg-6.container-fluid.pl-5.contactme
           h2.testo-dorato.text-center
             !=RichText.asText(contatti.data.nome_azienda)
           div.text-center.text-dorato.marker-icon.py-3
