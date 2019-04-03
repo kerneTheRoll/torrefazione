@@ -9,6 +9,7 @@ const Cred = require("./creds");
 //Must be at the end so it go through the Prismic middleware because ended up in the final route
 const I18N = require("./i18n.json");
 //provide a lang parameter in the route
+
 function I18NUrl(urlPart) {
   return `/:lang(${I18N.languages.map(l => l.key).join("|")})${urlPart || ""}`;
 }
@@ -82,13 +83,16 @@ function gestisciEmail(req, res, next) {
     const telefono = req.body.telefono;
     const richiesta = req.body.richiesta;
     const scelta = req.body.scelta;
-
+    const date = new Date();
+    const hour = date.getHours();
+    const messege = hour > 16 ? "Buonasera" : "Buongiono";
     // setup email data with unicode symbols
     let mailOptions = {
-      to: "abdimohamed862992@gmail.com", // list of receivers
+      to: "info@torrefazionedelconte.com", // list of receivers
       subject: "richiesta da parte di " + nome + " per " + scelta, // Subject line
       text:
-        "Buona sera, una richiesta  a nome di  " +
+        messege +
+        ", una richiesta  a nome di  " +
         nome +
         " " +
         cognome +
